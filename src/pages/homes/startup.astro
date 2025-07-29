@@ -14,7 +14,7 @@ import Brands from '~/components/widgets/Brands.astro';
 import { YouTube } from 'astro-embed';
 
 const metadata = {
-  title: 'Startup Landing Page',
+  title: 'ToneClinic - מרפאת שמיעה מקצועית',
 };
 ---
 
@@ -22,31 +22,30 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Startup Web Demo"
+    tagline="מרפאת שמיעה מקצועית"
     actions={[
       {
         variant: 'primary',
-        target: '_blank',
-        text: 'Get templates',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
+        target: '_self',
+        text: 'פגישת ייעוץ',
+        href: '/contact',
+        icon: 'tabler:calendar',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'למידע נוסף', href: '#features' },
     ]}
   >
     <Fragment slot="title">
-      Improve <span class="hidden sm:inline">the online presence of</span> your <span
-        class="text-accent dark:text-white">Startup</span
-      > with Astrowind templates
+      שמיעה טובה יותר <span class="hidden sm:inline">מתחילה ב</span>
+      <span class="text-accent dark:text-white">ToneClinic</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Step into the spotlight with <span class="font-semibold">Astrowind</span> templates, your pathway to fortifying your
-      startup's digital footprint, fostering credibility, and expanding your reach.
+      מרפאת שמיעה מתקדמת המציעה שירותי אודיולוגיה מקצועיים, בדיקות שמיעה מדויקות ופתרונות מותאמים אישית לשיפור איכות
+      השמיעה שלכם.
     </Fragment>
 
     <Fragment slot="image">
-      <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
+      <YouTube id="gxBkghlglTg" title="ToneClinic - מרפאת שמיעה מקצועית" />
       <style is:inline>
         lite-youtube {
           margin: 0 auto;
@@ -59,8 +58,8 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="About us"
-    subtitle="We believe in the magic of turning dreams into stunning realities. Founded by passionate developers with a shared vision, we set out to simplify the website creation process. Our templates bring together the innovation of Astro 5.0 and the versatility of Tailwind CSS, enabling you to express your unique brand identity like never before."
+    title="אודותינו"
+    subtitle="ToneClinic היא מרפאת שמיעה מובילה המחויבת לספק טיפול אודיולוגי מתקדם ואיכותי. הצוות המקצועי שלנו כולל אודיולוגים מוסמכים עם ניסיון רב באבחון וטיפול בבעיות שמיעה. אנו משתמשים בציוד החדיש ביותר כדי להבטיח אבחון מדויק וטיפול יעיל."
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -70,59 +69,46 @@ const metadata = {
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Discover the impressive impact of Astrowind"
-    subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
+    title="המספרים מדברים בעד עצמם"
+    subtitle="אלפי מטופלים מרוצים בחרו ב-ToneClinic לטיפול בשמיעה שלהם"
     stats={[
-      { title: 'Downloads', amount: '182K' },
-      { title: 'Websites Launched', amount: '87' },
-      { title: 'User Ratings', amount: '4.8' },
-      { title: 'Satisfied Clients', amount: '116K' },
+      { title: 'מטופלים מרוצים', amount: '5,000+' },
+      { title: 'שנות ניסיון', amount: '15+' },
+      { title: 'דירוג מקצועי', amount: '4.9' },
+      { title: 'בדיקות שמיעה', amount: '10,000+' },
     ]}
   />
 
   <!-- Brands Widget ****************** -->
 
   <Brands
-    title="Partnerships & Collaborations"
-    subtitle="At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
+    title="שותפויות מקצועיות"
+    subtitle="אנו עובדים עם מותגי מכשירי השמיעה המובילים בעולם כדי להבטיח את הפתרונות הטובים ביותר למטופלינו"
     icons={[]}
     images={[
       {
         src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
-        alt: 'Paypal',
+        alt: 'Phonak',
       },
       {
         src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
-        alt: 'Visa',
+        alt: 'Oticon',
       },
       {
         src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
-        alt: 'Ebay',
+        alt: 'Starkey',
       },
-
       {
         src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
-        alt: 'Youtube',
+        alt: 'ReSound',
       },
       {
         src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-        alt: 'Microsoft',
+        alt: 'Widex',
       },
       {
         src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
-        alt: 'Node JS',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
-        alt: 'Google',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
-        alt: 'Meta',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
-        alt: 'Yahoo',
+        alt: 'Siemens',
       },
     ]}
   />
@@ -130,25 +116,22 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="What services do we provide?"
-    subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
+    title="מה השירותים שאנו מספקים?"
+    subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים לטיפול בבעיות שמיעה"
     items={[
       {
-        title: 'Installation Instructions',
-        description:
-          'Offer clear instructions on how to download the purchased templates and install them on various website platforms or content management systems.',
+        title: 'בדיקות שמיעה מקיפות',
+        description: 'בדיקות שמיעה מדויקות באמצעות ציוד מתקדם לאבחון בעיות שמיעה שונות ולקביעת הטיפול המתאים.',
         icon: 'flat-color-icons:document',
       },
       {
-        title: 'Demo and Previews',
-        description:
-          'Provide interactive demos and previews that allow customers to see how their chosen template will look and function before making a purchase.',
+        title: 'התאמת מכשירי שמיעה',
+        description: 'התאמה אישית של מכשירי שמיעה מתקדמים עם טכנולוגיה חדישה לשיפור איכות השמיעה.',
         icon: 'flat-color-icons:template',
       },
       {
-        title: 'Technical Support',
-        description:
-          'Providing customer support for any technical issues related to the templates or their implementation.',
+        title: 'ייעוץ מקצועי',
+        description: 'ייעוץ מקצועי מקיף לכל שאלה בנושא שמיעה, טיפול ומניעה של בעיות שמיעה.',
         icon: 'flat-color-icons:voice-presentation',
       },
     ]}
@@ -162,42 +145,39 @@ const metadata = {
 
   <Features
     id="features"
-    title="Main features of our templates"
-    subtitle="Possess several key characteristics to effectively cater to the needs of startups and entrepreneurs."
+    title="היתרונות שלנו"
+    subtitle="למה לבחור ב-ToneClinic לטיפול בשמיעה שלכם"
     columns={3}
     items={[
       {
-        title: 'Modern and Professional Design',
-        description:
-          'Have a contemporary design that reflects current design trends and gives a professional impression.',
-        icon: 'tabler:artboard',
+        title: 'צוות מקצועי מוסמך',
+        description: 'אודיולוגים מוסמכים עם ניסיון רב באבחון וטיפול בבעיות שמיעה שונות.',
+        icon: 'tabler:user-check',
       },
       {
-        title: 'Responsive and Mobile-Friendly',
-        description: 'Adapt seamlessly to different screen sizes and devices to ensure a consistent experience.',
-        icon: 'tabler:picture-in-picture',
+        title: 'ציוד מתקדם',
+        description: 'מכשור חדיש ומתקדם לאבחון מדויק וטיפול יעיל בבעיות שמיעה.',
+        icon: 'tabler:microscope',
       },
       {
-        title: 'Customizability',
-        description:
-          'Easily customizable, allowing users to adapt the design, colors, typography, and content to match their brand identity.',
+        title: 'טיפול מותאם אישית',
+        description: 'כל טיפול מותאם אישית לצרכים הספציפיים של כל מטופל ומטופלת.',
         icon: 'tabler:adjustments-horizontal',
       },
       {
-        title: 'Fast Loading Times',
-        description: 'Optimized for speed to ensure a smooth user experience and favorable search engine rankings.',
-        icon: 'tabler:rocket',
+        title: 'שירות מקצועי ואדיב',
+        description: 'שירות אדיב ומקצועי עם דגש על נוחות המטופל וחוויית הטיפול.',
+        icon: 'tabler:heart',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          'Incorporate SEO best practices in template structure and code to improve visibility in search engine results.',
-        icon: 'tabler:arrows-right-left',
+        title: 'מעקב וטיפול מתמשך',
+        description: 'מעקב מתמשך אחר התקדמות הטיפול והתאמות נדרשות לאורך זמן.',
+        icon: 'tabler:chart-line',
       },
       {
-        title: 'Compatibility',
-        description: 'The templates work seamlessly across various content management systems and website builders.',
-        icon: 'tabler:plug-connected',
+        title: 'מיקום נגיש',
+        description: 'מיקום מרכזי ונגיש עם חניה חינם ונגישות מלאה לנכים.',
+        icon: 'tabler:map-pin',
       },
     ]}
   />
@@ -205,37 +185,34 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
+    title="שאלות נפוצות"
     items={[
       {
-        title: 'What are landing page templates?',
+        title: 'איך אדע אם אני צריך בדיקת שמיעה?',
         description:
-          'Landing page templates are pre-designed web page layouts that are specifically created to serve as a foundation for building effective landing pages. These templates are designed to capture the attention of visitors and guide them towards a specific action or goal, such as signing up for a newsletter, making a purchase, or downloading a resource.',
+          'אם אתה חווה קשיים בשמיעה, צלצולים באוזניים, או קושי בהבנת דיבור בסביבה רועשת, מומלץ לבצע בדיקת שמיעה. גם אם יש לך היסטוריה משפחתית של בעיות שמיעה, בדיקה תקופתית מומלצת.',
       },
       {
-        title: 'Why should I use a template?',
+        title: 'כמה זמן לוקחת בדיקת שמיעה?',
         description:
-          'Some of the advantages are that they provide a ready-to-use structure,  saving you significant time. Are designed with user-friendliness in mind and provide a cost-effective alternative, saving you money while still delivering a quality result.',
+          'בדיקת שמיעה מקיפה נמשכת בין 30-60 דקות, תלוי בסוג הבדיקה הנדרשת. הבדיקה כוללת הערכה מקיפה של מערכת השמיעה.',
       },
       {
-        title: 'Can I preview templates before buying?',
-        description:
-          'Yes, the templates allow you to preview them before making a purchase. There is a "Demo" button associated with each template.',
+        title: 'האם בדיקת השמיעה כואבת?',
+        description: 'לא, בדיקת השמיעה אינה כואבת כלל. הבדיקה מתבצעת באמצעות אוזניות ואינה פולשנית.',
       },
       {
-        title: 'Do I need technical skills to use a template?',
+        title: 'האם מכשירי השמיעה נראים?',
         description:
-          'Advanced technical skills are not required to use a template, but having a basic understanding of web navigation and familiarity with using online tools can still be beneficial. If you have more specific customization needs, you might need to consult guides or reach out to customer support for assistance.',
+          'כיום קיימים מכשירי שמיעה זעירים ומודרניים שקשה מאוד להבחין בהם. חלקם אף מוסתרים לחלוטין בתוך תעלת האוזן.',
       },
       {
-        title: 'Can I use the template on multiple websites?',
-        description:
-          'No, the template comes with a single-use license, meaning you can use the template on one website or project only. Using the template on additional websites would require purchasing additional licenses.',
+        title: 'האם יש אחריות על מכשירי השמיעה?',
+        description: 'כן, כל מכשירי השמיעה מגיעים עם אחריות מלאה של היצרן. בנוסף, אנו מספקים שירות ותמיכה מתמשכים.',
       },
       {
-        title: 'What if I need help with customization?',
-        description:
-          "The templates provides a comprehensive step-by-step guide that walk you through the customization process. If you still have doubts, you can reach out to our customer support team. They can answer your questions, provide guidance on customization, and address any issues you're facing.",
+        title: 'איך אני יכול לקבוע תור?',
+        description: 'ניתן לקבוע תור בטלפון, דרך האתר או במייל. אנו נשמח לעזור לכם לקבוע תור בזמן הנוח לכם.',
       },
     ]}
   >
@@ -247,47 +224,47 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Let us know how we can help"
-    subtitle="We’re here to help and answer any question you might have."
+    title="צרו קשר איתנו"
+    subtitle="אנו כאן לעזור ולענות על כל שאלה שיש לכם"
     columns={4}
     items={[
       {
-        title: 'Phone',
+        title: 'טלפון',
         icon: 'tabler:phone',
         callToAction: {
           target: '_blank',
-          text: 'Call us',
-          href: '/',
+          text: 'התקשר אלינו',
+          href: 'tel:+972-XX-XXXXXXX',
           variant: 'link',
         },
       },
       {
-        title: 'Email',
+        title: 'אימייל',
         icon: 'tabler:mail',
         callToAction: {
           target: '_blank',
-          text: 'Write to us',
-          href: '/',
+          text: 'כתוב לנו',
+          href: 'mailto:info@toneclinic.co.il',
           variant: 'link',
         },
       },
       {
-        title: 'Chat with sales',
-        icon: 'tabler:message-circle',
+        title: 'קביעת תור',
+        icon: 'tabler:calendar',
         callToAction: {
           target: '_blank',
-          text: 'Start chatting',
-          href: '/',
+          text: 'קבע תור',
+          href: '/contact',
           variant: 'link',
         },
       },
       {
-        title: 'Chat with support',
-        icon: 'tabler:message-circle',
+        title: 'שעות פעילות',
+        icon: 'tabler:clock',
         callToAction: {
           target: '_blank',
-          text: 'Start chatting',
-          href: '/',
+          text: 'פרטים',
+          href: '/contact',
           variant: 'link',
         },
       },
@@ -300,18 +277,17 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        target: '_blank',
-        text: 'Get templates',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
+        target: '_self',
+        text: 'פגישת ייעוץ',
+        href: '/contact',
+        icon: 'tabler:calendar',
       },
     ]}
   >
-    <Fragment slot="title">Be a part of our vision</Fragment>
+    <Fragment slot="title">התחל את המסע לשמיעה טובה יותר</Fragment>
 
     <Fragment slot="subtitle">
-      Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful
-      impact.
+      אל תחכה - שמיעה טובה יותר מתחילה בבדיקה פשוטה. צור קשר איתנו היום וקבל את הטיפול המקצועי שאתה ראוי לו.
     </Fragment>
   </CallToAction>
 </Layout>

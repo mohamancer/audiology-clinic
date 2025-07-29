@@ -5,73 +5,76 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'צור קשר - ToneClinic',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="צור קשר" title="בואו נפגש!" />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="שלחו לנו הודעה היום!"
+    subtitle="למענה מהיר יותר, בדקו את מדור השאלות הנפוצות. ייתכן שתמצאו שם את הפתרון שאתם מחפשים! אם לא, צוות התמיכה שלנו ישמח לעזור לכם."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'שם מלא',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: 'אימייל',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'טלפון',
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'הודעה',
     }}
     disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+      label: 'על ידי שליחת טופס יצירת קשר זה, אתם מכירים ומסכימים לאיסוף המידע האישי שלכם.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="צוות התמיכה שלנו בדרך כלל עונה תוך 24 שעות עסקיות."
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="We are here to help!"
+    title="אנחנו כאן לעזור!"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: 'קביעת תור',
+        description: `צרו קשר איתנו לקביעת תור לבדיקת שמיעה, התאמת מכשירי שמיעה או ייעוץ מקצועי. אנו נשמח לעזור לכם לקבוע תור בזמן הנוח לכם.`,
       },
       {
-        title: 'Contact sales',
+        title: 'ייעוץ מקצועי',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'צרו קשר איתנו לשאלות מקצועיות בנושא שמיעה, טיפול בבעיות שמיעה, מניעה או כל שאלה אחרת הקשורה לאודיולוגיה.',
       },
       {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+        title: 'תמיכה טכנית',
+        description: 'צרו קשר איתנו לבעיות טכניות עם מכשירי השמיעה, התאמות נדרשות או כל בעיה אחרת הקשורה לטיפול.',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
+        title: 'טלפון',
+        description: '+972-XX-XXXXXXX',
+        icon: 'tabler:phone',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
+        title: 'אימייל',
+        description: 'info@toneclinic.co.il',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: 'כתובת',
+        description: 'רחוב הרצל 123, תל אביב, ישראל',
         icon: 'tabler:map-pin',
       },
     ]}

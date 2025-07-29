@@ -1,7 +1,7 @@
 {
-  "name": "audiology-clinic",
-  "version": "1.0.0-beta.52",
-  "description": "AstroWind: A free template using Astro 5.0 and Tailwind CSS. Astro starter theme.",
+  "name": "toneclinic",
+  "version": "1.0.0",
+  "description": "ToneClinic: מרפאת שמיעה מקצועית - אתר אינטרנט מתקדם לשרותי אודיולוגיה",
   "type": "module",
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
@@ -21,12 +21,12 @@
     "fix:prettier": "prettier -w ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/rss": "4.0.12",
+    "@astrojs/sitemap": "3.4.1",
     "@astrolib/analytics": "^0.6.1",
     "@astrolib/seo": "^1.0.0-beta.8",
     "@fontsource-variable/inter": "^5.2.5",
-    "astro": "^5.7.3",
+    "astro": "5.12.3",
     "astro-embed": "^0.9.0",
     "astro-icon": "^1.1.5",
     "limax": "4.1.0",
@@ -35,13 +35,14 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.2.4",
+    "@astrojs/mdx": "4.3.1",
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/tailwind": "6.0.2",
     "@eslint/js": "^9.24.0",
     "@iconify-json/flat-color-icons": "^1.2.1",
     "@iconify-json/tabler": "^1.2.17",
     "@tailwindcss/typography": "^0.5.16",
+    "@types/bun": "^1.2.19",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
     "@types/mdx": "^2.0.13",
