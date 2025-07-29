@@ -71,8 +71,6 @@ export default defineConfig({
     domains: ['cdn.pixabay.com'],
   },
 
-
-
   vite: {
     resolve: {
       alias: {

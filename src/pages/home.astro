@@ -1,17 +1,15 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Image } from 'astro:assets';
+import defaultImage from '~/assets/images/default.jpeg';
 
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Brands from '~/components/widgets/Brands.astro';
-
-import { YouTube } from 'astro-embed';
 
 const metadata = {
   title: 'ToneClinic - מרפאת שמיעה מקצועית',
@@ -45,7 +43,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="image">
-      <YouTube id="gxBkghlglTg" title="ToneClinic - מרפאת שמיעה מקצועית" />
+      <Image alt="ToneClinic - בדיקות שמיעה בזמינות מיידית" src={defaultImage} />
       <style is:inline>
         lite-youtube {
           margin: 0 auto;
@@ -76,40 +74,6 @@ const metadata = {
       { title: 'שנות ניסיון', amount: '15+' },
       { title: 'דירוג מקצועי', amount: '4.9' },
       { title: 'בדיקות שמיעה', amount: '10,000+' },
-    ]}
-  />
-
-  <!-- Brands Widget ****************** -->
-
-  <Brands
-    title="שותפויות מקצועיות"
-    subtitle="אנו עובדים עם מותגי מכשירי השמיעה המובילים בעולם כדי להבטיח את הפתרונות הטובים ביותר למטופלינו"
-    icons={[]}
-    images={[
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
-        alt: 'Phonak',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
-        alt: 'Oticon',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
-        alt: 'Starkey',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
-        alt: 'ReSound',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-        alt: 'Widex',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
-        alt: 'Siemens',
-      },
     ]}
   />
 
@@ -234,7 +198,7 @@ const metadata = {
         callToAction: {
           target: '_blank',
           text: 'התקשר אלינו',
-          href: 'tel:+972-XX-XXXXXXX',
+          href: 'tel:+972-50-6712610',
           variant: 'link',
         },
       },
@@ -244,7 +208,7 @@ const metadata = {
         callToAction: {
           target: '_blank',
           text: 'כתוב לנו',
-          href: 'mailto:info@toneclinic.co.il',
+          href: 'mailto:info.toneclinic@gmail.com',
           variant: 'link',
         },
       },

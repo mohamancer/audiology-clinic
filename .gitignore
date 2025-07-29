@@ -20,5 +20,5 @@ pnpm-debug.log*
 .DS_Store
 
 pnpm-lock.yaml
-
+bun.lockb
 .astro

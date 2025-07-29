@@ -57,12 +57,11 @@
 │   │   └── layouts/
 │   ├── layouts/
 │   ├── pages/
-│   │   ├── homes/
-│   │   │   └── startup.astro
 │   │   ├── about.astro
 │   │   ├── contact.astro
 │   │   ├── terms.md
-│   │   └── privacy.md
+│   │   ├── privacy.md
+│   │   ├── home.astro
 │   ├── config.yaml
 │   └── navigation.ts
 ├── astro.config.ts
@@ -93,7 +92,7 @@ npm run preview
 ```yaml
 site:
   name: ToneClinic
-  site: 'https://toneclinic.vercel.app'
+  site: 'https://toneclinic.net'
   base: '/'
   trailingSlash: false
 

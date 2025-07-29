@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'דף הבית',
-      href: getPermalink('/homes/startup'),
+      href: getPermalink('/home'),
     },
     {
       text: 'אודות',
@@ -42,7 +42,7 @@ export const footerData = {
       links: [
         { text: 'שעות פעילות', href: '#' },
         { text: 'מיקום', href: '#' },
-        { text: 'טלפון', href: 'tel:+972-XX-XXXXXXX' },
+        { text: 'טלפון', href: 'tel:+972-50-6712610' },
       ],
     },
   ],
