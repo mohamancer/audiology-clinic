@@ -1,9 +1,6 @@
 name: GitHub Actions
 
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
@@ -13,29 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version:
-          - 18
-          - 20
-          - 22
+        bun-version:
+          - 1.0.0
+          - latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - name: Use Bun v${{ matrix.bun-version }}
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      # - run: npm test
+          bun-version: ${{ matrix.bun-version }}
+      - run: bun install
+      - run: bun run build
+      # - run: bun test
 
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
+      - name: Use Bun latest
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run check
+          bun-version: latest
+      - run: bun install
+      - run: bun run check
