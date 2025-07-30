@@ -11,6 +11,10 @@ export const headerData = {
       href: getPermalink('/about'),
     },
     {
+      text: 'שעות פעילות',
+      href: getPermalink('/work-hours'),
+    },
+    {
       text: 'צור קשר',
       href: getPermalink('/contact'),
     },
@@ -40,7 +44,7 @@ export const footerData = {
     {
       title: 'תמיכה',
       links: [
-        { text: 'שעות פעילות', href: '#' },
+        { text: 'שעות פעילות', href: getPermalink('/work-hours') },
         { text: 'מיקום', href: '#' },
         { text: 'טלפון', href: 'tel:+972-50-6712610' },
       ],
@@ -56,7 +60,7 @@ export const footerData = {
     { ariaLabel: 'וואטסאפ', icon: 'tabler:brand-whatsapp', href: '#' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="ToneClinic logo" loading="lazy"></img>
-    © 2024 ToneClinic - כל הזכויות שמורות.
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="מכון טון logo" loading="lazy"></img>
+    © 2024 מכון טון - כל הזכויות שמורות.
   `,
 };

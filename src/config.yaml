@@ -1,5 +1,5 @@
 site:
-  name: ToneClinic
+  name: מכון טון - ToneClinic
   # TODO: add official site url
   site: 'https://toneclinic.net'
   base: '/'
@@ -10,14 +10,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: ToneClinic
-    template: '%s — ToneClinic'
+    default: מכון טון
+    template: '%s — מכון טון'
   description: 'מרפאת שמיעה מקצועית - שירותי אודיולוגיה מתקדמים וטיפול בשמיעה.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: ToneClinic
+    site_name: מכון טון
     images:
       - url: '~/assets/images/default.jpg'
         width: 1200
@@ -40,4 +40,4 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
