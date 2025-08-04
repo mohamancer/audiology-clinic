@@ -17,6 +17,7 @@ export interface Props {
   itemClass?: string;
   iconName?: string;
   iconClass?: string;
+  href?: string; // Add href prop for button navigation
 }
 
 const {
@@ -28,14 +29,15 @@ const {
   itemClass = 'flex items-center first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap text-gray-900 dark:text-white',
   iconName = 'tabler:chevron-down',
   iconClass = 'w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline text-white',
+  href, // Extract href prop
 } = Astro.props;
 ---
 
 <li class="dropdown">
-  <button type="button" class={buttonClass}>
+  <a class={buttonClass} href={href}>
     {text}{' '}
     <Icon name={iconName} class={iconClass} />
-  </button>
+  </a>
   <ul class={menuClass}>
     {
       items.map(({ text: itemText, href, icon }) => (

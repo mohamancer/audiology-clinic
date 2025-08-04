@@ -86,7 +86,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {
           links.map(({ text, href, links }) =>
             links?.length && text ? (
-              <Dropdown text={text} items={links} currentPath={currentPath} />
+              <Dropdown text={text} items={links} currentPath={currentPath} href={href} />
             ) : (
               <li>
                 <a
