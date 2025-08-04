@@ -5,19 +5,30 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'צור קשר - מכון טון',
+  title: 'קביעת תור - מכון טון',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="צור קשר" title="בואו נפגש!" />
+  <HeroText tagline="קביעת תור" title="נשמח לעזור לכם!" />
+
+  <!-- Business Phone Number Prominently Displayed -->
+  <div class="bg-primary text-white py-8 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4">לקביעת תור מידית - חייגו:</h2>
+      <a href="tel:0733880680" class="text-5xl font-bold hover:text-accent transition-colors">
+        073-3880680
+      </a>
+      <p class="mt-4 text-xl">זמינים 24/7 לשירותכם</p>
+    </div>
+  </div>
 
   <ContactUs
     id="form"
-    title="שלחו לנו הודעה היום!"
-    subtitle="למענה מהיר יותר, בדקו את מדור השאלות הנפוצות. ייתכן שתמצאו שם את הפתרון שאתם מחפשים! אם לא, צוות התמיכה שלנו ישמח לעזור לכם."
+    title="קביעת תור אונליין"
+    subtitle="מלאו את הטופס ונחזור אליכם בהקדם. לקביעת תור מידית, חייגו אלינו בטלפון 073-3880680"
     inputs={[
       {
         type: 'text',
@@ -25,23 +36,28 @@ const metadata = {
         label: 'שם מלא',
       },
       {
-        type: 'email',
-        name: 'email',
-        label: 'אימייל',
-      },
-      {
         type: 'tel',
         name: 'phone',
         label: 'טלפון',
       },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'אימייל (אופציונלי)',
+      },
+      {
+        type: 'text',
+        name: 'preferred_time',
+        label: 'זמן מועדף לתור',
+      },
     ]}
     textarea={{
-      label: 'הודעה',
+      label: 'פרטים נוספים / סוג הטיפול הנדרש',
     }}
     disclaimer={{
       label: 'על ידי שליחת טופס יצירת קשר זה, אתם מכירים ומסכימים לאיסוף המידע האישי שלכם.',
     }}
-    description="צוות התמיכה שלנו בדרך כלל עונה תוך 24 שעות עסקיות."
+    description="נחזור אליכם בהקדם לקביעת התור. לתגובה מיידית - חייגו 073-3880680"
   />
 
   <!-- Features2 Widget ************** -->

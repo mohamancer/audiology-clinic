@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface DropdownItem {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+export interface Props {
+  text: string;
+  items: Array<DropdownItem>;
+  currentPath?: string;
+  buttonClass?: string;
+  menuClass?: string;
+  itemClass?: string;
+  iconName?: string;
+  iconClass?: string;
+}
+
+const {
+  text,
+  items = [],
+  currentPath = '',
+  buttonClass = 'hover:text-white/80 dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap text-white',
+  menuClass = 'dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl',
+  itemClass = 'flex items-center first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap text-gray-900 dark:text-white',
+  iconName = 'tabler:chevron-down',
+  iconClass = 'w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline text-white',
+} = Astro.props;
+---
+
+<li class="dropdown">
+  <button type="button" class={buttonClass}>
+    {text}{' '}
+    <Icon name={iconName} class={iconClass} />
+  </button>
+  <ul class={menuClass}>
+    {
+      items.map(({ text: itemText, href, icon }) => (
+        <li>
+          <a class:list={[itemClass, { 'aw-link-active': href === currentPath }]} href={href}>
+            {icon && <Icon name={icon} class="w-4 h-4 mr-2 rtl:mr-0 rtl:ml-2" />}
+            {itemText}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</li>

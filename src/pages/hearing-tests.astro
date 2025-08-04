@@ -1,0 +1,250 @@
+---
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'בדיקות שמיעה - מכון טון',
+  description: 'בדיקות שמיעה מקיפות ומתקדמות במכון טון. אבחון מדויק ומקצועי עם ציוד חדיש.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="בדיקות שמיעה"
+    image={{
+      src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'בדיקות שמיעה מקצועיות',
+    }}
+  >
+    <Fragment slot="title">
+      בדיקות שמיעה <br />
+      <span class="text-accent dark:text-white">מקיפות ומתקדמות</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      במכון טון אנו מבצעים בדיקות שמיעה מקיפות באמצעות ציוד מתקדם ביותר. הצוות המקצועי שלנו מורכב מאודיולוגים 
+      מוסמכים עם ניסיון רב באבחון מדויק של בעיות שמיעה מכל הסוגים והגילאים. לכל מטופל יהיה הסבר מפורט וברור עם תמונות.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="ear-canal-exam"
+    title="בדיקת תעלת האוזן"
+    subtitle="בדיקה ראשונית ויסודית של מבנה האוזן החיצונית והתיכונה"
+    items={[
+      {
+        title: 'בדיקה ויזואלית באוטוסקופ',
+        description: 'בדיקה מדויקת של תעלת האוזן ועור התוף באמצעות אוטוסקופ מתקדם לזיהוי דלקות, שעווה או חסימות.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'ניקוי מקצועי של האוזן',
+        description: 'הסרת שעווה עודפת וחסימות בתעלת האוזן באמצעות כלים מקצועיים ובטוחים.',
+        icon: 'tabler:wash',
+      },
+      {
+        title: 'אבחון בעיות ברקמות',
+        description: 'זיהוי דלקות, פצעים או בעיות אחרות ברקמות האוזן החיצונית והתיכונה.',
+        icon: 'tabler:stethoscope',
+      },
+      {
+        title: 'הכנה לבדיקות מתקדמות',
+        description: 'הכנת האוזן לבדיקות שמיעה מתקדמות יותר על ידי הבטחת תעלת אוזן נקייה ופתוחה.',
+        icon: 'tabler:checklist',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'בדיקת תעתוע האוזן',
+    }}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="comprehensive-test"
+    title="בדיקה שמיעתית מקיפה"
+    subtitle="בדיקת שמיעה מפורטת ומדויקת לכל תחומי התדרים"
+    isReversed
+    items={[
+      {
+        title: 'אודיומטריה צרופה',
+        description: 'בדיקת רגישות השמיעה בתדרים שונים באמצעות אוזניות מקצועיות, למדידת סף השמיעה בכל אוזן בנפרד.',
+        icon: 'tabler:headphones',
+      },
+      {
+        title: 'אודיומטריה עצמית',
+        description: 'בדיקת הולכת הצליל דרך העצמות באמצעות רטט לזיהוי מיקום הבעיה באוזן החיצונית, התיכונה או הפנימית.',
+        icon: 'tabler:bone',
+      },
+      {
+        title: 'בדיקת הבנת דיבור',
+        description: 'מדידת יכולת הבנת מילים ומשפטים ברמות עוצמה שונות לקביעת מידת הפגיעה בהבנה.',
+        icon: 'tabler:message',
+      },
+      {
+        title: 'בדיקת סף אי נוחות',
+        description: 'קביעת רמת הקול המקסימלית שהמטופל יכול לסבול ללא אי נוחות או כאב.',
+        icon: 'tabler:volume-3',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'בדיקה שמיעתית מקיפה',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    id="tympanometry"
+    title="בדיקת טימפנומטריה"
+    subtitle="בדיקה מתקדמת לבחינת תפקוד האוזן התיכונה ועור התוף"
+    items={[
+      {
+        title: 'מדידת גמישות עור התוף',
+        description: 'בדיקה מדויקת של גמישות עור התוף ותנועתו בתגובה לשינויי לחץ, לאבחון בעיות באוזן התיכונה.',
+        icon: 'tabler:wave-square',
+      },
+      {
+        title: 'בדיקת לחץ באוזן התיכונה',
+        description: 'מדידת לחץ האוויר באוזן התיכונה לזיהוי נוזלים, דלקות או בעיות בצינור אוסטכיוס.',
+        icon: 'tabler:gauge',
+      },
+      {
+        title: 'בדיקת רפלקס סטפדיוס',
+        description: 'בדיקת תגובת השריר הקטן באוזן התיכונה לצלילים חזקים, המעידה על תקינות המערכת השמיעתית.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'זיהוי חורים בעור התוף',
+        description: 'איתור חורים או קרעים בעור התוף שעלולים להשפיע על השמיעה ולדרוש טיפול רפואי.',
+        icon: 'tabler:search',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id="detailed-test"
+    title="בדיקות מפורטות עם תמונות"
+    subtitle="לכל מטופל תהיה תיעוד מפורט עם תמונות ותוצאות דיגיטליות"
+    columns={2}
+    items={[
+      {
+        title: 'תיעוד דיגיטלי מלא',
+        description: 'כל בדיקה מתועדת במערכת דיגיטלית מתקדמת עם גרפים, תמונות ותוצאות מפורטות לשמירה ומעקב.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'תמונות מהאוזן',
+        description: 'צילום מקצועי של תעלת האוזן ועור התוף באמצעות מצלמה דיגיטלית מתקדמת להמחשת הממצאים.',
+        icon: 'tabler:camera',
+      },
+      {
+        title: 'אודיוגרמה צבעונית',
+        description: 'תוצאות הבדיקה מוצגות באודיוגרמה צבעונית וברורה להבנה קלה של מצב השמיעה.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'המלצות טיפול',
+        description: 'המלצות מפורטות לטיפול על בסיס תוצאות הבדיקה, כולל אפשרויות שונות ודרגי דחיפות.',
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'דוח רפואי מקצועי',
+        description: 'דוח רפואי מקצועי ומפורט שניתן להעביר לרופא המשפחה או לרופא אף אוזן גרון.',
+        icon: 'tabler:report',
+      },
+      {
+        title: 'מעקב התקדמות',
+        description: 'השוואה עם בדיקות קודמות לזיהוי שינויים ומעקב אחר התקדמות הטיפול לאורך זמן.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="תהליך הבדיקה במכון טון"
+    subtitle="כך נראה תהליך הבדיקה השלם אצלנו - מהזמנת התור ועד קבלת התוצאות"
+    items={[
+      {
+        title: 'שלב 1: קביעת תור ואנמנזה',
+        description: 'קביעת תור נוח, מילוי שאלון רפואי ושיחה על ההיסטוריה הרפואית והתלונות הנוכחיות.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'שלב 2: בדיקת תעתוע האוזן',
+        description: 'בדיקה ויזואלית של האוזן, ניקוי שעווה במידת הצורך והכנה לבדיקות השמיעה.',
+        icon: 'tabler:ear',
+      },
+      {
+        title: 'שלב 3: בדיקות שמיעה מתקדמות',
+        description: 'ביצוע בדיקות האודיומטריה, טימפנומטריה ובדיקות נוספות לפי הצורך.',
+        icon: 'tabler:stethoscope',
+      },
+      {
+        title: 'שלב 4: ניתוח תוצאות והסבר',
+        description: 'ניתוח התוצאות, הסבר מפורט למטופל והמלצות לטיפול או מעקב.',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'שלב 5: קבלת דוח ומעקב',
+        description: 'קבלת דוח מפורט עם תמונות ותוצאות, וקביעת תוכנית מעקב או טיפול.',
+        icon: 'tabler:file-download',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'תהליך בדיקת השמיעה',
+    }}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    title="למה לבחור בבדיקות השמיעה שלנו?"
+    subtitle="מה מייחד את הבדיקות במכון טון"
+    items={[
+      {
+        title: 'ציוד מתקדם ביותר',
+        description: 'אנו משתמשים בציוד הבדיקות החדיש והמתקדם ביותר מהמותגים המובילים בעולם לקבלת תוצאות מדויקות.',
+        icon: 'tabler:device-desktop',
+      },
+      {
+        title: 'אודיולוגים מומחים',
+        description: 'הצוות שלנו מורכב מאודיולוגים מוסמכים עם ניסיון רב ואשר עוברים השתלמויות מתמידות.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'תיעוד דיגיטלי מלא',
+        description: 'כל בדיקה מתועדת במערכת דיגיטלית מתקדמת המאפשרת מעקב מתמשך ושמירה לטווח ארוך.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'הסבר ברור ומפורט',
+        description: 'נקפיד להסביר את כל התוצאות בשפה ברורה ופשוטה, עם המלצות מעשיות לטיפול.',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'ציוד בדיקות מתקדם',
+    }}
+  />
+</Layout>

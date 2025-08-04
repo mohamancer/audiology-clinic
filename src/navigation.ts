@@ -3,8 +3,33 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'דף הבית',
-      href: getPermalink('/home'),
+      text: 'מכשירי שמיעה',
+      href: getPermalink('/hearing-aids'),
+      links: [
+        { text: 'מותגים שלנו', href: getPermalink('/hearing-aids#brands'), icon: 'tabler:building-store' },
+        { text: 'דגמים מובילים', href: getPermalink('/hearing-aids#leading-models'), icon: 'tabler:award' },
+        { text: 'מכשירים נסתרים', href: getPermalink('/hearing-aids#hidden-devices'), icon: 'tabler:eye-off' },
+        { text: 'השתתפות קופות חולים', href: getPermalink('/hearing-aids#insurance'), icon: 'tabler:receipt' },
+      ],
+    },
+    {
+      text: 'בדיקות שמיעה',
+      href: getPermalink('/hearing-tests'),
+      links: [
+        { text: 'בדיקת תעלת האוזן', href: getPermalink('/hearing-tests#ear-canal-exam'), icon: 'tabler:ear' },
+        { text: 'בדיקת שמיעה מקיפה', href: getPermalink('/hearing-tests#comprehensive-test'), icon: 'tabler:stethoscope' },
+        { text: 'בדיקת טימפנומטריה', href: getPermalink('/hearing-tests#tympanometry'), icon: 'tabler:chart-line' },
+      ],
+    },
+    {
+      text: 'ציוד נלווה',
+      href: getPermalink('/accessories'),
+      links: [
+        { text: 'סוללות למכשירי שמיעה', href: getPermalink('/accessories#batteries'), icon: 'tabler:battery' },
+        { text: 'חלפים למכשירי שמיעה', href: getPermalink('/accessories#replacements'), icon: 'tabler:refresh' },
+        { text: 'ציוד שמיעה מוגבר', href: getPermalink('/accessories#amplified-devices'), icon: 'tabler:volume' },
+        { text: 'ציוד נלווה למכשירי שמיעה', href: getPermalink('/accessories#hearing-accessories'), icon: 'tabler:components' },
+      ],
     },
     {
       text: 'אודות',
@@ -19,7 +44,10 @@ export const headerData = {
       href: getPermalink('/contact'),
     },
   ],
-  actions: [{ text: 'פגישת ייעוץ', href: getPermalink('/contact'), target: '_self' }],
+  actions: [
+    { text: 'קביעת תור', href: getPermalink('/contact'), target: '_self' },
+    { text: '0733880680', href: 'tel:0733880680', target: '_self', classes: { btn: 'btn-link text-white underline' } }
+  ],
 };
 
 export const footerData = {

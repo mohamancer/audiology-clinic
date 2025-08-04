@@ -1,0 +1,199 @@
+---
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'מכשירי שמיעה - מכון טון',
+  description: 'מכשירי שמיעה מתקדמים, מותגים מובילים וציוד נלווה במכון טון. התאמה אישית וליווי מקצועי.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="מכשירי שמיעה"
+    image={{
+      src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'מכשירי שמיעה מתקדמים',
+    }}
+  >
+    <Fragment slot="title">
+      מכשירי שמיעה <br />
+      <span class="text-accent dark:text-white">מתקדמים ומותאמים אישית</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      במכון טון אנו מציעים מגוון רחב של מכשירי שמיעה מהמותגים המובילים בעולם, עם התאמה אישית מושלמת לכל לקוח. הצוות
+      המקצועי שלנו ילווה אתכם בכל התהליך - מהבדיקה הראשונית ועד למעקב המתמשך.
+    </Fragment>
+  </Hero>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id="brands"
+    title="מותגים שלנו"
+    subtitle="אנו עובדים עם המותגים המובילים בעולם במכשירי שמיעה"
+    columns={3}
+    items={[
+      {
+        title: 'Phonak',
+        description: 'מותג שוויצרי מוביל בטכנולוגיית מכשירי שמיעה עם חדשנות מתמדת.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Oticon',
+        description: 'מותג דני עם למעלה מ-100 שנות ניסיון בפיתוח פתרונות שמיעה מתקדמים.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Widex',
+        description: 'מותג דני המתמחה במכשירי שמיעה עם איכות צליל יוצאת דופן.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'ReSound',
+        description: 'מותג דני-אמריקאי חלוץ בטכנולוגיית מכשירי שמיעה חכמים.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Signia',
+        description: 'מותג גרמני המציע פתרונות שמיעה מתקדמים עם דיוק גבוה.',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Starkey',
+        description: 'מותג אמריקאי עם טכנולוגיה מתקדמת ובינה מלאכותית.',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="leading-models"
+    title="דגמים מובילים"
+    subtitle="מכשירי השמיעה המתקדמים והפופולריים ביותר"
+    items={[
+      {
+        title: 'מכשירי שמיעה דיגיטליים',
+        description: 'מכשירי שמיעה דיגיטליים מתקדמים עם בקרת רעש חכמה, התאמה אוטומטית לסביבות שונות וחיבור Bluetooth.',
+        icon: 'tabler:ear',
+      },
+      {
+        title: 'מכשירי שמיעה נטענים',
+        description: 'מכשירי שמיעה עם סוללה נטענת לנוחות מקסימלית, ללא צורך בהחלפת סוללות קטנות.',
+        icon: 'tabler:battery-charging',
+      },
+      {
+        title: 'מכשירי שמיעה חכמים',
+        description: 'מכשירי שמיעה עם יכולות חכמות כמו חיבור לאפליקציה, שליטה מהטלפון ובינה מלאכותית.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'מכשירי שמיעה עם שלט',
+        description: 'מכשירי שמיעה הכוללים שלט רחוק לבקרה נוחה על עוצמת הקול וההגדרות השונות.',
+        icon: 'tabler:adjustments',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'דגמים מובילים',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    id="hidden-devices"
+    title="מכשירים נסתרים"
+    subtitle="מכשירי שמיעה דיסקרטיים וכמעט בלתי נראים"
+    items={[
+      {
+        title: 'מכשירים בתוך התעלה (ITC)',
+        description: 'מכשירי שמיעה הנמצאים בתוך תעלת האוזן, דיסקרטיים ונוחים לשימוש יומיומי.',
+        icon: 'tabler:ear-off',
+      },
+      {
+        title: 'מכשירים עמוק בתעלה (CIC)',
+        description: 'מכשירי שמיעה הנמצאים עמוק בתעלת האוזן, כמעט בלתי נראים מבחוץ.',
+        icon: 'tabler:eye-off',
+      },
+      {
+        title: 'מכשירים בלתי נראים (IIC)',
+        description: 'מכשירי השמיעה הקטנים ביותר, הנמצאים עמוק בתעלת האוזן ובלתי נראים לחלוטין.',
+        icon: 'tabler:eye-off',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Pricing Widget **************** -->
+
+  <Pricing
+    id="insurance"
+    title="השתתפות קופות חולים"
+    subtitle="אנו עובדים עם כל קופות החולים ומעניקים החזר כספי מלא או חלקי"
+    prices={[
+      {
+        title: 'קופת חולים כללית',
+        subtitle: 'החזר עד ₪3,500',
+        price: 'החזר מלא',
+        period: 'לחברי כללית',
+        items: [
+          { title: 'בדיקת שמיעה' },
+          { title: 'התאמת מכשיר שמיעה' },
+          { title: 'מעקב למשך שנה' },
+          { title: 'החזר כספי מלא או חלקי' },
+        ],
+        callToAction: {
+          text: 'קביעת תור',
+          href: '/contact',
+        },
+      },
+      {
+        title: 'קופת חולים מכבי',
+        subtitle: 'החזר עד ₪3,200',
+        price: 'החזר מלא',
+        period: 'לחברי מכבי',
+        items: [
+          { title: 'בדיקת שמיעה' },
+          { title: 'התאמת מכשיר שמיעה' },
+          { title: 'מעקב למשך שנה' },
+          { title: 'החזר כספי מלא או חלקי' },
+        ],
+        callToAction: {
+          text: 'קביעת תור',
+          href: '/contact',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'פופולרי',
+      },
+      {
+        title: 'קופת חולים לאומית',
+        subtitle: 'החזר עד ₪2,800',
+        price: 'החזר חלקי',
+        period: 'לחברי לאומית',
+        items: [
+          { title: 'בדיקת שמיעה' },
+          { title: 'התאמת מכשיר שמיעה' },
+          { title: 'מעקב למשך שנה' },
+          { title: 'החזר כספי חלקי' },
+        ],
+        callToAction: {
+          text: 'קביעת תור',
+          href: '/contact',
+        },
+      },
+    ]}
+  />
+</Layout>

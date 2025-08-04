@@ -1,0 +1,218 @@
+---
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'ציוד נלווה - מכון טון',
+  description: 'ציוד נלווה למכשירי שמיעה - סוללות, חלפים, ציוד מוגבר ואביזרים נוספים במכון טון.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="ציוד נלווה"
+    image={{
+      src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'ציוד נלווה למכשירי שמיעה',
+    }}
+  >
+    <Fragment slot="title">
+      ציוד נלווה <br />
+      <span class="text-accent dark:text-white">למכשירי שמיעה</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      במכון טון אנו מציעים מגוון רחב של ציוד נלווה למכשירי שמיעה - מסוללות איכותיות ועד ציוד מוגבר מתקדם. כל המוצרים
+      שלנו הם מהמותגים המובילים בעולם ומגיעים עם אחריות מלאה ושירות מקצועי.
+    </Fragment>
+  </Hero>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id="batteries"
+    title="סוללות למכשירי שמיעה"
+    subtitle="סוללות איכותיות לכל סוגי מכשירי השמיעה"
+    columns={4}
+    items={[
+      {
+        title: 'סוללות גודל 10',
+        description: 'סוללות קטנות למכשירי שמיעה דקים ודיסקרטיים. ללא כספית, ידידותיות לסביבה.',
+        icon: 'tabler:battery',
+      },
+      {
+        title: 'סוללות גודל 312',
+        description: 'סוללות פופולריות למכשירי שמיעה מאחורי האוזן. ביצועים מעולים וחיי סוללה ארוכים.',
+        icon: 'tabler:battery',
+      },
+      {
+        title: 'סוללות גודל 13',
+        description: 'סוללות בגודל בינוני למכשירי שמיעה סטנדרטיים. חיי סוללה ארוכים וביצועים אמינים.',
+        icon: 'tabler:battery',
+      },
+      {
+        title: 'סוללות גודל 675',
+        description: 'סוללות גדולות למכשירי שמיעה עוצמתיים. החיים הארוכים ביותר ועוצמה מקסימלית.',
+        icon: 'tabler:battery',
+      },
+      {
+        title: 'מטענים נטענים',
+        description: 'מטענים מתקדמים למכשירי שמיעה נטענים עם תצוגה דיגיטלית וחיבור USB.',
+        icon: 'tabler:battery-charging',
+      },
+      {
+        title: 'כבלי טעינה',
+        description: 'כבלי טעינה מקוריים והחלפה למכשירי שמיעה נטענים מכל הדגמים.',
+        icon: 'tabler:usb',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    id="replacements"
+    title="חלפים למכשירי שמיעה"
+    subtitle="חלקי חילוף מקוריים ואיכותיים לכל סוגי מכשירי השמיעה"
+    items={[
+      {
+        title: 'אטמי אוזן',
+        description: 'אטמי אוזן סיליקון רכים בגדלים שונים להתאמה מושלמת ונוחות מקסימלית לכל סוגי האוזניים.',
+        icon: 'tabler:plug',
+      },
+      {
+        title: 'צינוריות והחלפות',
+        description: 'צינוריות החלפה למכשירי שמיעה מאחורי האוזן, בחומרים איכותיים ועמידים לטווח הארוך.',
+        icon: 'tabler:line',
+      },
+      {
+        title: 'מיקרופונים ורמקולים',
+        description: 'מיקרופונים ורמקולים מקוריים להחלפה במכשירי שמיעה, המבטיחים איכות קול מעולה.',
+        icon: 'tabler:microphone',
+      },
+      {
+        title: 'כיסויים וחלקי פלסטיק',
+        description: 'כיסויים וחלקי פלסטיק להחלפה במכשירי שמיעה, זמינים בצבעים שונים ובכל הגדלים.',
+        icon: 'tabler:cube',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="amplified-devices"
+    title="ציוד שמיעה מוגבר"
+    subtitle="מכשירים מתקדמים להגברת השמיעה במצבים שונים"
+    items={[
+      {
+        title: 'מגברי קול אישיים',
+        description: 'מגברי קול נישאים לשיפור השמיעה במצבים חברתיים ובשיחות אחד על אחד, קלים לשימוש ויעילים.',
+        icon: 'tabler:volume',
+      },
+      {
+        title: 'אוזניות מוגברות',
+        description: 'אוזניות עם מיקרופון מוגבר לשיחות ברורות יותר ושיפור השמיעה במצבים רועשים.',
+        icon: 'tabler:headphones',
+      },
+      {
+        title: 'מערכות FM אישיות',
+        description: 'מערכות FM נישאות לשיפור השמיעה בסביבות רועשות כמו כיתות לימוד ואולמות הרצאות.',
+        icon: 'tabler:radio',
+      },
+      {
+        title: 'מכשירי התראה רטט',
+        description: 'מכשירי התראה עם רטט ואור למטופלים עם לקויות שמיעה חמורות - לשעון מעורר, פעמון הדלת ועוד.',
+        icon: 'tabler:bell',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'ציוד שמיעה מוגבר',
+    }}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id="hearing-accessories"
+    title="ציוד נלווה למכשירי שמיעה"
+    subtitle="אביזרים נוספים לשיפור חוויית השמיעה והנוחות"
+    columns={3}
+    items={[
+      {
+        title: 'מארזי נשיאה וניקוי',
+        description: 'מארזים מתקדמים לאחסון ויבוש מכשירי שמיעה עם סילון אוויר וחיטוי UV.',
+        icon: 'tabler:box',
+      },
+      {
+        title: 'כלי ניקוי מתקדמים',
+        description: 'כלי ניקוי מקצועיים למכשירי שמיעה - מברשות, מקלונים וחומרי ניקוי מיוחדים.',
+        icon: 'tabler:brush',
+      },
+      {
+        title: 'שלטים רחוקים',
+        description: 'שלטים רחוקים לשליטה נוחה במכשירי השמיעה - שינוי תוכניות, עוצמה והגדרות.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'מתאמי Bluetooth',
+        description: 'מתאמי Bluetooth לחיבור מכשירי השמיעה לטלפון, טלוויזיה ומכשירי אודיו נוספים.',
+        icon: 'tabler:bluetooth',
+      },
+      {
+        title: 'כבלי חיבור',
+        description: 'כבלי חיבור ומתאמים למכשירי שמיעה לחיבור למקורות שמע שונים.',
+        icon: 'tabler:usb',
+      },
+      {
+        title: 'מוצרי תחזוקה',
+        description: 'מוצרי תחזוקה מקצועיים - שמנים, חומרי איטום ותחזוקה למכשירי שמיעה.',
+        icon: 'tabler:tool',
+      },
+    ]}
+  />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    title="למה לבחור בציוד הנלווה שלנו?"
+    subtitle="היתרונות של קניית ציוד נלווה במכון טון"
+    isReversed
+    items={[
+      {
+        title: 'איכות מובטחת',
+        description: 'כל הציוד שלנו הוא ממותגים מובילים בעולם עם אחריות מלאה ובדיקות איכות קפדניות.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'התאמה מושלמת',
+        description: 'הצוות שלנו יוודא שכל החלק או האביזר מתאים במדויק לדגם המכשיר שלכם.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'תמיכה מקצועית',
+        description: 'קבלת ייעוץ מקצועי והדרכה מלאה על השימוש והתחזוקה של כל מוצר.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'זמינות מידית',
+        description: 'מלאי קבוע של כל הפריטים הנדרשים לזמינות מידית ללא המתנה.',
+        icon: 'tabler:clock',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      alt: 'שירות מקצועי',
+    }}
+  />
+</Layout>
