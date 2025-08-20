@@ -17,7 +17,11 @@ export const headerData = {
       href: getPermalink('/hearing-tests'),
       links: [
         { text: 'בדיקת תעלת האוזן', href: getPermalink('/hearing-tests#ear-canal-exam'), icon: 'tabler:ear' },
-        { text: 'בדיקת שמיעה מקיפה', href: getPermalink('/hearing-tests#comprehensive-test'), icon: 'tabler:stethoscope' },
+        {
+          text: 'בדיקת שמיעה מקיפה',
+          href: getPermalink('/hearing-tests#comprehensive-test'),
+          icon: 'tabler:stethoscope',
+        },
         { text: 'בדיקת טימפנומטריה', href: getPermalink('/hearing-tests#tympanometry'), icon: 'tabler:chart-line' },
       ],
     },
@@ -28,7 +32,11 @@ export const headerData = {
         { text: 'סוללות למכשירי שמיעה', href: getPermalink('/accessories#batteries'), icon: 'tabler:battery' },
         { text: 'חלפים למכשירי שמיעה', href: getPermalink('/accessories#replacements'), icon: 'tabler:refresh' },
         { text: 'ציוד שמיעה מוגבר', href: getPermalink('/accessories#amplified-devices'), icon: 'tabler:volume' },
-        { text: 'ציוד נלווה למכשירי שמיעה', href: getPermalink('/accessories#hearing-accessories'), icon: 'tabler:components' },
+        {
+          text: 'ציוד נלווה למכשירי שמיעה',
+          href: getPermalink('/accessories#hearing-accessories'),
+          icon: 'tabler:components',
+        },
       ],
     },
     {
@@ -46,7 +54,7 @@ export const headerData = {
   ],
   actions: [
     { text: 'קביעת תור', href: getPermalink('/contact'), target: '_self' },
-    { text: '0733880680', href: 'tel:0733880680', target: '_self', classes: { btn: 'btn-link text-white underline' } }
+    { text: '0733880680', href: 'tel:0733880680', target: '_self', classes: { btn: 'btn-link text-white underline' } },
   ],
 };
 

@@ -2,8 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import { Image } from 'astro:assets';
-import defaultImage from '~/assets/images/default.jpeg';
+import AnimatedBackground from '~/components/ui/AnimatedBackground.astro';
 
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -39,21 +38,9 @@ const metadata = {
 
     <Fragment slot="subtitle">
       מרפאת שמיעה מתקדמת המציעה שירותי אודיולוגיה מקצועיים, בדיקות שמיעה מדויקות ופתרונות מותאמים אישית לשיפור איכות
-      השמיעה שלכם.
+      השמיעה שלכם. עובדים תחת הסכמים של כל הקופות.
     </Fragment>
 
-    <Fragment slot="image">
-      <Image
-        alt="מכון טון - בדיקות שמיעה בזמינות מיידית"
-        src={defaultImage}
-        class="mx-auto w-full rounded-lg shadow-[0_8px_40px_rgba(0,0,0,0.4)] dark:shadow-[0_8px_40px_rgba(59,130,246,0.2)]"
-        widths={[400, 768, 1024, 2040]}
-        sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-        loading="eager"
-        width={1024}
-        height={576}
-      />
-    </Fragment>
   </Hero>
 
   <!-- Features2 Widget ************** -->
@@ -71,7 +58,7 @@ const metadata = {
 
   <Stats
     title="המספרים מדברים בעד עצמם"
-    subtitle="אלפי מטופלים מרוצים בחרו ב-מכון טון לטיפול בשמיעה שלהם"
+    subtitle="אלפי מטופלים מרוצים בחרו במכון טון לטיפול בשמיעה שלהם"
     stats={[
       { title: 'מטופלים מרוצים', amount: '5,000+' },
       { title: 'שנות ניסיון', amount: '15+' },
@@ -84,7 +71,7 @@ const metadata = {
 
   <Features2
     title="מה השירותים שאנו מספקים?"
-    subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים לטיפול בבעיות שמיעה"
+    subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים לטיפול בבעיות שמיעה לרבות בדיקות שמיעה: בדיקה אודיומטרית, בדיקת טימפנומטריה. שיקום שמיעתי: התאמת מכשירי שמיעה לכל הגילאים. ציוד נלווה: ציוד הגברה - אוזניות אלחוטיות לטלוויזיה, טלפון מוגבר, סוללות למכשירי שמיעה."
     items={[
       {
         title: 'בדיקות שמיעה מקיפות',
@@ -113,7 +100,7 @@ const metadata = {
   <Features
     id="features"
     title="היתרונות שלנו"
-    subtitle="למה לבחור ב-מכון טון לטיפול בשמיעה שלכם"
+    subtitle="למה לבחור במכון טון לטיפול בשמיעה שלכם"
     columns={3}
     items={[
       {
@@ -162,7 +149,7 @@ const metadata = {
       {
         title: 'כמה זמן לוקחת בדיקת שמיעה?',
         description:
-          'בדיקת שמיעה מקיפה נמשכת בין 30-60 דקות, תלוי בסוג הבדיקה הנדרשת. הבדיקה כוללת הערכה מקיפה של מערכת השמיעה.',
+          'בדיקת שמיעה מקיפה נמשכת בין 20-30 דקות, תלוי בסוג הבדיקה הנדרשת. הבדיקה כוללת הערכה מקיפה של מערכת השמיעה.',
       },
       {
         title: 'האם בדיקת השמיעה כואבת?',
@@ -201,7 +188,7 @@ const metadata = {
         callToAction: {
           target: '_blank',
           text: 'התקשר אלינו',
-          href: 'tel:+972-50-6712610',
+          href: 'tel:0733880680',
           variant: 'link',
         },
       },

@@ -13,6 +13,10 @@ export default {
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
+      backgroundImage: {
+        'gradient-primary': 'var(--aw-gradient-primary)',
+        'gradient-secondary': 'var(--aw-gradient-secondary)',
+      },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
