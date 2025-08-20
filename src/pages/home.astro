@@ -2,13 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import AnimatedBackground from '~/components/ui/AnimatedBackground.astro';
-
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import ImageCarousel from '~/components/widgets/ImageCarousel.astro';
 
 const metadata = {
   title: 'מכון טון - מרפאת שמיעה מקצועית',
@@ -40,11 +39,65 @@ const metadata = {
       מרפאת שמיעה מתקדמת המציעה שירותי אודיולוגיה מקצועיים, בדיקות שמיעה מדויקות ופתרונות מותאמים אישית לשיפור איכות
       השמיעה שלכם. עובדים תחת הסכמים של כל הקופות.
     </Fragment>
-
   </Hero>
 
-  <!-- Features2 Widget ************** -->
+  <!-- Image Carousel Widget ********* -->
+  <ImageCarousel
+    title="המרכז שלנו"
+    subtitle="צפו בציוד המתקדם ובסביבה המקצועית של מכון טון"
+    items={[
+      {
+        id: 'hearing-sound-waves',
+        image: '/images/hearing-sound-waves.jpg',
+        title: 'טכנולוגיית שמיעה מתקדמת',
+        description: 'פתרונות חדשניים לשיפור השמיעה באמצעות טכנולוגיה מתקדמת',
+        alt: 'איור דיגיטלי של גלי קול ואוזן - טכנולוגיית שמיעה',
+      },
+      {
+        id: 'audiologist-consultation',
+        image: '/images/audiologist-consultation.jpg',
+        title: 'בדיקת שמיעה מקצועית',
+        description: 'בדיקות שמיעה מקיפות על ידי אודיולוגים מוסמכים',
+        alt: 'אודיולוג מבצע בדיקת שמיעה למטופלת במרפאה',
+      },
+      {
+        id: 'hearing-aids-display',
+        image: '/images/hearing-aids-display.jpg',
+        title: 'מכשירי שמיעה מתקדמים',
+        description: 'מגוון רחב של מכשירי שמיעה מהטכנולוגיה החדישה ביותר',
+        alt: 'מבחר מכשירי שמיעה מודרניים בצבעים שונים',
+      },
+      {
+        id: 'premium-hearing-aids',
+        image: '/images/premium-hearing-aids.jpg',
+        title: 'מכשירי שמיעה פרימיום',
+        description: 'פתרונות שמיעה מתקדמים עם עיצוב אלגנטי ותכונות חכמות',
+        alt: 'מכשירי שמיעה פרימיום מוצגים על רקע צבעוני',
+      },
+      {
+        id: 'hearing-test-process',
+        image: '/images/hearing-test-process.jpg',
+        title: 'תהליך בדיקת השמיעה',
+        description: 'סביבה מקצועית ונעימה לביצוע בדיקות שמיעה מדויקות',
+        alt: 'מטופלת בתהליך בדיקת שמיעה עם ציוד מקצועי',
+      },
+      {
+        id: 'hearing-aid-charging',
+        image: '/images/hearing-aid-charging.jpg',
+        title: 'טיפול ותחזוקה',
+        description: 'שירותי תחזוקה מקצועיים למכשירי שמיעה וציוד נלווה',
+        alt: 'מכשיר שמיעה נטען על מטען מתקדם',
+      },
+    ]}
+    autoPlay={true}
+    interval={4000}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gray-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ImageCarousel>
 
+  <!-- Features2 Widget ************** -->
   <Features2
     title="אודותינו"
     subtitle="מכון טון היא מרפאת שמיעה מובילה המחויבת לספק טיפול אודיולוגי מתקדם ואיכותי. הצוות המקצועי שלנו כולל אודיולוגים מוסמכים עם ניסיון רב באבחון וטיפול בבעיות שמיעה. אנו משתמשים בציוד החדיש ביותר כדי להבטיח אבחון מדויק וטיפול יעיל."

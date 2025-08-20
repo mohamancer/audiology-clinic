@@ -1,0 +1,56 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import SimpleCarousel from '~/components/ui/SimpleCarousel.astro';
+import type { Widget, CarouselItem } from '~/types';
+
+export interface Props extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  items?: CarouselItem[];
+  autoPlay?: boolean;
+  interval?: number;
+  showControls?: boolean;
+  showIndicators?: boolean;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  autoPlay = true,
+  interval = 3000,
+  showControls = true,
+  showIndicators = true,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  {
+    (title || subtitle || tagline) && (
+      <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={classes?.headline as Record<string, string>}
+      />
+    )
+  }
+
+  <div class="mt-8 -mx-4 md:-mx-6">
+    <SimpleCarousel
+      items={items}
+      autoPlay={autoPlay}
+      interval={interval}
+      showControls={showControls}
+      showIndicators={showIndicators}
+    />
+  </div>
+</WidgetWrapper>

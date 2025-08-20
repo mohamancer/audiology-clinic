@@ -1,0 +1,250 @@
+---
+import Image from '~/components/common/Image.astro';
+
+export interface CarouselItem {
+  id: string;
+  image: string;
+  title?: string;
+  description?: string;
+  alt?: string;
+}
+
+export interface Props {
+  items: CarouselItem[];
+  autoPlay?: boolean;
+  interval?: number;
+  showControls?: boolean;
+  showIndicators?: boolean;
+  class?: string;
+}
+
+const {
+  items,
+  autoPlay = true,
+  interval = 3000,
+  showControls = true,
+  showIndicators = true,
+  class: className = '',
+} = Astro.props;
+
+const carouselId = `carousel-${Math.random().toString(36).substring(2, 11)}`;
+---
+
+<div class={`simple-carousel relative h-96 md:h-[500px] lg:h-[600px] ${className}`} data-carousel-id={carouselId} style="contain: layout;">
+  <!-- Flowing carousel container -->
+  <div class="carousel-track relative w-full h-full" style="perspective: 1000px; transform-style: preserve-3d; contain: layout style;">
+    {
+      items.map((item, index) => (
+        <div
+          class="carousel-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-out transform-gpu"
+          style="will-change: transform;"
+          data-slide={index}
+        >
+          <div class="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
+            <Image
+              src={item.image}
+              alt={item.alt || item.title || `Slide ${index + 1}`}
+              class="w-full h-full object-cover"
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+            {(item.title || item.description) && (
+              <div
+                class="slide-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end transition-opacity duration-1000 opacity-0"
+                data-slide-overlay={index}
+              >
+                <div class="p-6 md:p-8 text-white w-full">
+                  {item.title && <h3 class="text-2xl md:text-3xl font-bold mb-2 text-right">{item.title}</h3>}
+                  {item.description && <p class="text-lg opacity-90 text-right">{item.description}</p>}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Navigation controls -->
+  {
+    showControls && (
+      <Fragment>
+        <button
+          class="carousel-btn carousel-btn-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 md:p-3 shadow-lg transition-all duration-300 hover:scale-110"
+          data-action="prev"
+          aria-label="Previous slide"
+        >
+          <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          class="carousel-btn carousel-btn-next absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 md:p-3 shadow-lg transition-all duration-300 hover:scale-110"
+          data-action="next"
+          aria-label="Next slide"
+        >
+          <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </Fragment>
+    )
+  }
+
+  <!-- Indicators -->
+  {
+    showIndicators && (
+      <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 z-20">
+        {items.map((_, index) => (
+          <button
+            class={`carousel-indicator w-3 h-3 rounded-full transition-all duration-300 ${
+              index === 0 ? 'bg-white' : 'bg-white/50 hover:bg-white/75'
+            }`}
+            data-slide-to={index}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<script is:inline define:vars={{ carouselId, autoPlay, interval }}>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector(`[data-carousel-id="${carouselId}"]`);
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('[data-slide]');
+    const overlays = carousel.querySelectorAll('[data-slide-overlay]');
+    const prevBtn = carousel.querySelector('[data-action="prev"]');
+    const nextBtn = carousel.querySelector('[data-action="next"]');
+    const indicators = carousel.querySelectorAll('[data-slide-to]');
+
+    let currentSlide = 0;
+    let autoPlayTimer = null;
+
+    function showSlide(index) {
+      const isMobile = window.innerWidth < 768; // md breakpoint
+      
+      // Position all slides for flowing effect
+      slides.forEach((slide, i) => {
+        // Remove all positioning classes
+        slide.classList.remove(
+          'z-30',
+          'z-20',
+          'z-10',
+          'scale-100',
+          'scale-90',
+          'scale-80',
+          'scale-70',
+          'opacity-100',
+          'opacity-80',
+          'opacity-60',
+          'opacity-0',
+          'translate-x-0',
+          'translate-x-[80%]',
+          '-translate-x-[80%]',
+          'translate-x-[150%]',
+          '-translate-x-[150%]',
+          'translate-x-[200%]',
+          'translate-x-[60%]',
+          '-translate-x-[60%]',
+          'translate-x-[120%]',
+          '-translate-x-[120%]'
+        );
+
+        // Calculate relative position to current slide
+        const relativePos = (i - index + slides.length) % slides.length;
+
+        if (isMobile) {
+          // Mobile: Simple fade effect, contained within bounds
+          if (relativePos === 0) {
+            slide.classList.add('z-30', 'scale-100', 'opacity-100', 'translate-x-0');
+          } else {
+            slide.classList.add('z-10', 'scale-100', 'opacity-0', 'translate-x-0');
+          }
+        } else {
+          // Desktop: Full flowing effect with reduced transforms to prevent overflow
+          if (relativePos === 0) {
+            // Center slide (active) - full width
+            slide.classList.add('z-30', 'scale-100', 'opacity-100', 'translate-x-0');
+          } else if (relativePos === 1) {
+            // Right slide - flows to the right (reduced transform)
+            slide.classList.add('z-20', 'scale-90', 'opacity-80', 'translate-x-[60%]');
+          } else if (relativePos === slides.length - 1) {
+            // Left slide - flows to the left (reduced transform)
+            slide.classList.add('z-20', 'scale-90', 'opacity-80', '-translate-x-[60%]');
+          } else if (relativePos === 2) {
+            // Far right - mostly outside view (reduced transform)
+            slide.classList.add('z-10', 'scale-80', 'opacity-60', 'translate-x-[120%]');
+          } else if (relativePos === slides.length - 2) {
+            // Far left - mostly outside view (reduced transform)
+            slide.classList.add('z-10', 'scale-80', 'opacity-60', '-translate-x-[120%]');
+          } else {
+            // Hidden slides - completely hidden but no extreme transforms
+            slide.classList.add('z-10', 'scale-70', 'opacity-0', 'translate-x-0');
+          }
+        }
+      });
+
+      // Update overlays - only show on center slide
+      overlays.forEach((overlay, i) => {
+        if (i === index) {
+          overlay.classList.remove('opacity-0');
+          overlay.classList.add('opacity-100');
+        } else {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0');
+        }
+      });
+
+      // Update indicators
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('bg-white', i === index);
+        indicator.classList.toggle('bg-white/50', i !== index);
+      });
+
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const nextIndex = (currentSlide + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+
+    function prevSlide() {
+      const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(prevIndex);
+    }
+
+    function startAutoPlay() {
+      if (autoPlay) {
+        autoPlayTimer = setInterval(nextSlide, interval);
+      }
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', nextSlide);
+    if (nextBtn) nextBtn.addEventListener('click', prevSlide);
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => showSlide(index));
+    });
+
+    // Pause auto-play on hover
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+
+    // Initialize
+    showSlide(0);
+    startAutoPlay();
+  });
+</script>

@@ -252,3 +252,11 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export interface CarouselItem {
+  id: string;
+  image: string;
+  title?: string;
+  description?: string;
+  alt?: string;
+}

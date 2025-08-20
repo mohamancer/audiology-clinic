@@ -6,9 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Core Development
 
-- `bunx --bun astro dev` - Start development server (uses Astro dev server with Bun runtime)
-- `bunx --bun astro build` - Build for production
-- `bunx --bun astro preview` - Preview production build
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run preview` - Preview production build
+- `bunx --bun astro dev` - Alternative: Start development server with Bun runtime
 
 ### Code Quality
 
@@ -19,6 +20,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `bun run fix` - Fix all auto-fixable issues (ESLint + Prettier)
 - `bun run fix:eslint` - Auto-fix ESLint issues
 - `bun run fix:prettier` - Auto-format with Prettier
+
+### Deployment
+
+- `docker build -t toneclinic .` - Build Docker image
+- Uses multi-stage Docker build with Nginx for production serving
 
 ## Architecture Overview
 
@@ -78,3 +84,21 @@ This is an **Astro 5.0** audiology clinic website with Hebrew RTL support, built
 - Configured for Vercel, Netlify, or other static hosting
 - Includes Docker setup and Nginx configuration
 - SEO optimized with Open Graph tags and structured metadata
+
+### Development Notes
+
+**Module Resolution:**
+
+- `~` alias configured for `./src` directory in Vite config
+- Import components using `~/components/...` syntax
+
+**Configuration Management:**
+
+- Uses custom Astrowind integration that creates virtual modules for config access
+- Config available as `astrowind:config` virtual module in components
+- Automatic robots.txt sitemap injection during build
+
+**Testing:**
+
+- No test framework currently configured
+- Quality assurance through ESLint, Prettier, and Astro type checking
