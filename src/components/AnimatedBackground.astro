@@ -12,7 +12,7 @@
     <div class="expanding-circle circle-4"></div>
     <div class="expanding-circle circle-5"></div>
   </div>
-  
+
   <!-- Bottom right - second viewport -->
   <div class="circle-container bottom-right viewport-2 delay-3">
     <div class="expanding-circle circle-1"></div>
@@ -21,7 +21,7 @@
     <div class="expanding-circle circle-4"></div>
     <div class="expanding-circle circle-5"></div>
   </div>
-  
+
   <!-- Top left - third viewport -->
   <div class="circle-container top-left viewport-3 delay-1">
     <div class="expanding-circle circle-1"></div>
@@ -30,7 +30,7 @@
     <div class="expanding-circle circle-4"></div>
     <div class="expanding-circle circle-5"></div>
   </div>
-  
+
   <!-- Bottom right - fourth viewport -->
   <div class="circle-container bottom-right viewport-4 delay-5">
     <div class="expanding-circle circle-1"></div>
@@ -47,7 +47,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: max(100%, 450vh);
+    height: 100vh; /* Start with viewport height */
     pointer-events: none;
     z-index: -1;
     overflow: hidden;
@@ -86,7 +86,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(100, 116, 139, 0.15) 0%, rgba(100, 116, 139, 0.08) 80%, transparent 100%);
+    background: radial-gradient(circle, rgba(100, 116, 139, 0.1) 0%, rgba(100, 116, 139, 0.05) 80%, transparent 100%);
     animation: expand 35s ease-out infinite;
     transform: translate(-50%, -50%);
   }
@@ -128,29 +128,69 @@
     animation-delay: calc(var(--base-delay, 0s) + 6s);
   }
 
-  .delay-0 .circle-1 { animation-delay: 0s; }
-  .delay-0 .circle-2 { animation-delay: 7s; }
-  .delay-0 .circle-3 { animation-delay: 14s; }
-  .delay-0 .circle-4 { animation-delay: 21s; }
-  .delay-0 .circle-5 { animation-delay: 28s; }
+  .delay-0 .circle-1 {
+    animation-delay: 0s;
+  }
+  .delay-0 .circle-2 {
+    animation-delay: 7s;
+  }
+  .delay-0 .circle-3 {
+    animation-delay: 14s;
+  }
+  .delay-0 .circle-4 {
+    animation-delay: 21s;
+  }
+  .delay-0 .circle-5 {
+    animation-delay: 28s;
+  }
 
-  .delay-1 .circle-1 { animation-delay: 2s; }
-  .delay-1 .circle-2 { animation-delay: 9s; }
-  .delay-1 .circle-3 { animation-delay: 16s; }
-  .delay-1 .circle-4 { animation-delay: 23s; }
-  .delay-1 .circle-5 { animation-delay: 30s; }
+  .delay-1 .circle-1 {
+    animation-delay: 2s;
+  }
+  .delay-1 .circle-2 {
+    animation-delay: 9s;
+  }
+  .delay-1 .circle-3 {
+    animation-delay: 16s;
+  }
+  .delay-1 .circle-4 {
+    animation-delay: 23s;
+  }
+  .delay-1 .circle-5 {
+    animation-delay: 30s;
+  }
 
-  .delay-3 .circle-1 { animation-delay: 4s; }
-  .delay-3 .circle-2 { animation-delay: 11s; }
-  .delay-3 .circle-3 { animation-delay: 18s; }
-  .delay-3 .circle-4 { animation-delay: 25s; }
-  .delay-3 .circle-5 { animation-delay: 32s; }
+  .delay-3 .circle-1 {
+    animation-delay: 4s;
+  }
+  .delay-3 .circle-2 {
+    animation-delay: 11s;
+  }
+  .delay-3 .circle-3 {
+    animation-delay: 18s;
+  }
+  .delay-3 .circle-4 {
+    animation-delay: 25s;
+  }
+  .delay-3 .circle-5 {
+    animation-delay: 32s;
+  }
 
-  .delay-5 .circle-1 { animation-delay: 6s; }
-  .delay-5 .circle-2 { animation-delay: 13s; }
-  .delay-5 .circle-3 { animation-delay: 20s; }
-  .delay-5 .circle-4 { animation-delay: 27s; }
-  .delay-5 .circle-5 { animation-delay: 34s; }
+  .delay-5 .circle-1 {
+    animation-delay: 6s;
+  }
+  .delay-5 .circle-2 {
+    animation-delay: 13s;
+  }
+  .delay-5 .circle-3 {
+    animation-delay: 20s;
+  }
+  .delay-5 .circle-4 {
+    animation-delay: 27s;
+  }
+  .delay-5 .circle-5 {
+    animation-delay: 34s;
+  }
 
   @keyframes expand {
     0% {
@@ -179,3 +219,17 @@
     }
   }
 </style>
+
+<script>
+  // Set background height to match document height
+  function updateBackgroundHeight() {
+    const background = document.querySelector('.animated-background');
+    if (background && background instanceof HTMLElement) {
+      background.style.height = document.documentElement.scrollHeight + 'px';
+    }
+  }
+
+  // Update on load and resize
+  window.addEventListener('load', updateBackgroundHeight);
+  window.addEventListener('resize', updateBackgroundHeight);
+</script>
