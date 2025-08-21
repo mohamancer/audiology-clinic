@@ -1,0 +1,181 @@
+---
+// Animated Background Component
+// Creates an expanding off-white circle that fades out smoothly
+---
+
+<div class="animated-background">
+  <!-- Top left - first viewport -->
+  <div class="circle-container top-left delay-0">
+    <div class="expanding-circle circle-1"></div>
+    <div class="expanding-circle circle-2"></div>
+    <div class="expanding-circle circle-3"></div>
+    <div class="expanding-circle circle-4"></div>
+    <div class="expanding-circle circle-5"></div>
+  </div>
+  
+  <!-- Bottom right - second viewport -->
+  <div class="circle-container bottom-right viewport-2 delay-3">
+    <div class="expanding-circle circle-1"></div>
+    <div class="expanding-circle circle-2"></div>
+    <div class="expanding-circle circle-3"></div>
+    <div class="expanding-circle circle-4"></div>
+    <div class="expanding-circle circle-5"></div>
+  </div>
+  
+  <!-- Top left - third viewport -->
+  <div class="circle-container top-left viewport-3 delay-1">
+    <div class="expanding-circle circle-1"></div>
+    <div class="expanding-circle circle-2"></div>
+    <div class="expanding-circle circle-3"></div>
+    <div class="expanding-circle circle-4"></div>
+    <div class="expanding-circle circle-5"></div>
+  </div>
+  
+  <!-- Bottom right - fourth viewport -->
+  <div class="circle-container bottom-right viewport-4 delay-5">
+    <div class="expanding-circle circle-1"></div>
+    <div class="expanding-circle circle-2"></div>
+    <div class="expanding-circle circle-3"></div>
+    <div class="expanding-circle circle-4"></div>
+    <div class="expanding-circle circle-5"></div>
+  </div>
+</div>
+
+<style>
+  .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: max(100%, 450vh);
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .circle-container {
+    position: absolute;
+  }
+
+  .top-left {
+    top: 10vh;
+    left: 10vw;
+  }
+
+  .bottom-right {
+    bottom: 10vh;
+    right: 10vw;
+  }
+
+  .viewport-2 {
+    top: 150vh;
+  }
+
+  .viewport-3 {
+    top: 300vh;
+  }
+
+  .viewport-4 {
+    top: 450vh;
+  }
+
+  .expanding-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(100, 116, 139, 0.15) 0%, rgba(100, 116, 139, 0.08) 80%, transparent 100%);
+    animation: expand 35s ease-out infinite;
+    transform: translate(-50%, -50%);
+  }
+
+  .circle-1 {
+    animation-delay: 0s;
+  }
+
+  .circle-2 {
+    animation-delay: 7s;
+  }
+
+  .circle-3 {
+    animation-delay: 14s;
+  }
+
+  .circle-4 {
+    animation-delay: 21s;
+  }
+
+  .circle-5 {
+    animation-delay: 28s;
+  }
+
+  /* Container delays - offset each viewport's start time */
+  .delay-0 .expanding-circle {
+    animation-delay: calc(var(--base-delay, 0s) + 0s);
+  }
+
+  .delay-1 .expanding-circle {
+    animation-delay: calc(var(--base-delay, 0s) + 2s);
+  }
+
+  .delay-3 .expanding-circle {
+    animation-delay: calc(var(--base-delay, 0s) + 4s);
+  }
+
+  .delay-5 .expanding-circle {
+    animation-delay: calc(var(--base-delay, 0s) + 6s);
+  }
+
+  .delay-0 .circle-1 { animation-delay: 0s; }
+  .delay-0 .circle-2 { animation-delay: 7s; }
+  .delay-0 .circle-3 { animation-delay: 14s; }
+  .delay-0 .circle-4 { animation-delay: 21s; }
+  .delay-0 .circle-5 { animation-delay: 28s; }
+
+  .delay-1 .circle-1 { animation-delay: 2s; }
+  .delay-1 .circle-2 { animation-delay: 9s; }
+  .delay-1 .circle-3 { animation-delay: 16s; }
+  .delay-1 .circle-4 { animation-delay: 23s; }
+  .delay-1 .circle-5 { animation-delay: 30s; }
+
+  .delay-3 .circle-1 { animation-delay: 4s; }
+  .delay-3 .circle-2 { animation-delay: 11s; }
+  .delay-3 .circle-3 { animation-delay: 18s; }
+  .delay-3 .circle-4 { animation-delay: 25s; }
+  .delay-3 .circle-5 { animation-delay: 32s; }
+
+  .delay-5 .circle-1 { animation-delay: 6s; }
+  .delay-5 .circle-2 { animation-delay: 13s; }
+  .delay-5 .circle-3 { animation-delay: 20s; }
+  .delay-5 .circle-4 { animation-delay: 27s; }
+  .delay-5 .circle-5 { animation-delay: 34s; }
+
+  @keyframes expand {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.8;
+      transform: translate(-50%, -50%);
+    }
+    20% {
+      opacity: 0.6;
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      opacity: 0.3;
+      transform: translate(-50%, -50%);
+    }
+    80% {
+      opacity: 0.1;
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      width: 120vmax;
+      height: 120vmax;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+</style>

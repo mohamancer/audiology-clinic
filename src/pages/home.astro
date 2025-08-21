@@ -8,6 +8,12 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import ImageCarousel from '~/components/widgets/ImageCarousel.astro';
+import hearingSoundWaves from 'public/images/hearing-sound-waves.jpg';
+import audiologistConsultation from 'public/images/audiologist-consultation.jpg';
+import hearingAidsDisplay from 'public/images/hearing-aids-display.jpg';
+import premiumHearingAids from 'public/images/premium-hearing-aids.jpg';
+import hearingTestProcess from 'public/images/hearing-test-process.jpg';
+import hearingAidCharging from 'public/images/hearing-aid-charging.jpg';
 
 const metadata = {
   title: 'מכון טון - מרפאת שמיעה מקצועית',
@@ -16,7 +22,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero
     tagline="מרפאת שמיעה מקצועית"
     actions={[
@@ -48,42 +53,42 @@ const metadata = {
     items={[
       {
         id: 'hearing-sound-waves',
-        image: '/images/hearing-sound-waves.jpg',
+        image: hearingSoundWaves,
         title: 'טכנולוגיית שמיעה מתקדמת',
         description: 'פתרונות חדשניים לשיפור השמיעה באמצעות טכנולוגיה מתקדמת',
         alt: 'איור דיגיטלי של גלי קול ואוזן - טכנולוגיית שמיעה',
       },
       {
         id: 'audiologist-consultation',
-        image: '/images/audiologist-consultation.jpg',
+        image: audiologistConsultation,
         title: 'בדיקת שמיעה מקצועית',
         description: 'בדיקות שמיעה מקיפות על ידי אודיולוגים מוסמכים',
         alt: 'אודיולוג מבצע בדיקת שמיעה למטופלת במרפאה',
       },
       {
         id: 'hearing-aids-display',
-        image: '/images/hearing-aids-display.jpg',
+        image: hearingAidsDisplay,
         title: 'מכשירי שמיעה מתקדמים',
         description: 'מגוון רחב של מכשירי שמיעה מהטכנולוגיה החדישה ביותר',
         alt: 'מבחר מכשירי שמיעה מודרניים בצבעים שונים',
       },
       {
         id: 'premium-hearing-aids',
-        image: '/images/premium-hearing-aids.jpg',
+        image: premiumHearingAids,
         title: 'מכשירי שמיעה פרימיום',
         description: 'פתרונות שמיעה מתקדמים עם עיצוב אלגנטי ותכונות חכמות',
         alt: 'מכשירי שמיעה פרימיום מוצגים על רקע צבעוני',
       },
       {
         id: 'hearing-test-process',
-        image: '/images/hearing-test-process.jpg',
+        image: hearingTestProcess,
         title: 'תהליך בדיקת השמיעה',
         description: 'סביבה מקצועית ונעימה לביצוע בדיקות שמיעה מדויקות',
         alt: 'מטופלת בתהליך בדיקת שמיעה עם ציוד מקצועי',
       },
       {
         id: 'hearing-aid-charging',
-        image: '/images/hearing-aid-charging.jpg',
+        image: hearingAidCharging,
         title: 'טיפול ותחזוקה',
         description: 'שירותי תחזוקה מקצועיים למכשירי שמיעה וציוד נלווה',
         alt: 'מכשיר שמיעה נטען על מטען מתקדם',
@@ -124,22 +129,37 @@ const metadata = {
 
   <Features2
     title="מה השירותים שאנו מספקים?"
-    subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים לטיפול בבעיות שמיעה לרבות בדיקות שמיעה: בדיקה אודיומטרית, בדיקת טימפנומטריה. שיקום שמיעתי: התאמת מכשירי שמיעה לכל הגילאים. ציוד נלווה: ציוד הגברה - אוזניות אלחוטיות לטלוויזיה, טלפון מוגבר, סוללות למכשירי שמיעה."
+    subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים, לטיפול בבעיות שמיעה, לרבות בדיקות שמיעה."
     items={[
       {
-        title: 'בדיקות שמיעה מקיפות',
-        description: 'בדיקות שמיעה מדויקות באמצעות ציוד מתקדם לאבחון בעיות שמיעה שונות ולקביעת הטיפול המתאים.',
-        icon: 'flat-color-icons:document',
+        title: 'בדיקה אודיומטרית',
+        description: 'בדיקת שמיעה מדויקת למדידת רמת השמיעה ואיתור ליקויי שמיעה באמצעות ציוד מתקדם.',
+        icon: 'flat-color-icons:database',
       },
       {
-        title: 'התאמת מכשירי שמיעה',
-        description: 'התאמה אישית של מכשירי שמיעה מתקדמים עם טכנולוגיה חדישה לשיפור איכות השמיעה.',
-        icon: 'flat-color-icons:template',
+        title: 'בדיקת טימפנומטריה',
+        description: 'בדיקה מתקדמת לבחינת תפקוד עצם התוף ותעלת השמיעה התיכונה.',
+        icon: 'flat-color-icons:search',
       },
       {
-        title: 'ייעוץ מקצועי',
-        description: 'ייעוץ מקצועי מקיף לכל שאלה בנושא שמיעה, טיפול ומניעה של בעיות שמיעה.',
-        icon: 'flat-color-icons:voice-presentation',
+        title: 'התאמת מכשירי שמיעה לכל הגילאים',
+        description: 'התאמה אישית ומקצועית של מכשירי שמיעה מתקדמים לתינוקות, ילדים, מבוגרים וקשישים.',
+        icon: 'flat-color-icons:electronics',
+      },
+      {
+        title: 'אוזניות אלחוטיות לטלוויזיה',
+        description: 'פתרונות הגברה מתקדמים לצפייה בטלוויזיה עם איכות שמע גבוהה ללא הפרעה לסביבה.',
+        icon: 'flat-color-icons:headset',
+      },
+      {
+        title: 'טלפון מוגבר',
+        description: 'מכשירי טלפון מותאמים עם הגברת קול לשיפור התקשורת הטלפונית.',
+        icon: 'flat-color-icons:phone',
+      },
+      {
+        title: 'סוללות למכשירי שמיעה',
+        description: 'מגוון רחב של סוללות איכותיות לכל סוגי מכשירי השמיעה עם חיי סוללה ארוכים.',
+        icon: 'flat-color-icons:charge-battery',
       },
     ]}
   >

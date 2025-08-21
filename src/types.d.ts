@@ -255,7 +255,7 @@ export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 
 export interface CarouselItem {
   id: string;
-  image: string;
+  image: ImageMetadata;
   title?: string;
   description?: string;
   alt?: string;
