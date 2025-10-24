@@ -10,7 +10,7 @@ export const headerData = {
         { text: 'מותגים שלנו', href: getPermalink('/hearing-aids#brands'), icon: 'tabler:building-store' },
         { text: 'דגמים מובילים', href: getPermalink('/hearing-aids#leading-models'), icon: 'tabler:award' },
         { text: 'מכשירים נסתרים', href: getPermalink('/hearing-aids#hidden-devices'), icon: 'tabler:eye-off' },
-        { text: 'השתתפות קופות חולים', href: getPermalink('/hearing-aids#insurance'), icon: 'tabler:receipt' },
+        { text: 'טכנולוגיה חכמה', href: getPermalink('/hearing-aids#smart-connectivity'), icon: 'tabler:receipt' },
       ],
     },
     {

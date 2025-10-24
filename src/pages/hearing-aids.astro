@@ -2,9 +2,17 @@
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Image from '~/components/common/Image.astro';
+import hearingAidsDisplay from '../../public/images/hearing-aids-display.jpg';
+import bernafonCharger from '~/assets/images/Bernafon-alpha-charger.jpg';
+import itcImage from '~/assets/images/Aanvii-Hearing-Solutions-Intuis-3_ITC_1000x1000-1900x1900.jpg';
+import cicImage from '~/assets/images/Widex-CIC-30-Rs20000.webp';
+import iicImage from '~/assets/images/photo-iic-5-1200w.webp';
+import premiumHearingAids from '~/assets/images/iphone-splash-screen-hearing-aids-1.webp';
 
 const metadata = {
   title: 'מכשירי שמיעה - מכון טון',
@@ -17,7 +25,7 @@ const metadata = {
 
   <Hero
     image={{
-      src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: hearingAidsDisplay,
       alt: 'מכשירי שמיעה מתקדמים',
     }}
   >
@@ -34,7 +42,7 @@ const metadata = {
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
+  <!-- <Features3
     id="brands"
     title="מותגים שלנו"
     subtitle="אנו עובדים עם המותגים המובילים בעולם במכשירי שמיעה"
@@ -71,41 +79,17 @@ const metadata = {
         icon: 'tabler:star',
       },
     ]}
-  />
+  /> -->
 
   <!-- Features Widget *************** -->
 
   <Features
     id="leading-models"
-    title="דגמים מובילים"
-    subtitle="מכשירי השמיעה המתקדמים והפופולריים ביותר"
-    items={[
-      {
-        title: 'מכשירי שמיעה דיגיטליים',
-        description: 'מכשירי שמיעה דיגיטליים מתקדמים עם בקרת רעש חכמה, התאמה אוטומטית לסביבות שונות וחיבור Bluetooth.',
-        icon: 'tabler:ear',
-      },
-      {
-        title: 'מכשירי שמיעה נטענים',
-        description: 'מכשירי שמיעה עם סוללה נטענת לנוחות מקסימלית, ללא צורך בהחלפת סוללות קטנות.',
-        icon: 'tabler:battery-charging',
-      },
-      {
-        title: 'מכשירי שמיעה חכמים',
-        description: 'מכשירי שמיעה עם יכולות חכמות כמו חיבור לאפליקציה, שליטה מהטלפון ובינה מלאכותית.',
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'מכשירי שמיעה עם שלט',
-        description: 'מכשירי שמיעה הכוללים שלט רחוק לבקרה נוחה על עוצמת הקול וההגדרות השונות.',
-        icon: 'tabler:adjustments',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      alt: 'דגמים מובילים',
-    }}
+    title="מכשירי שמיעה נטענים מונחה AI"
+    subtitle="טכנולוגיה מתקדמת המשלבת בינה מלאכותית להתאמה אוטומטית בזמן אמת וסוללות נטענות לנוחות מקסימלית - פתרון חכם, ידידותי לסביבה וחסכוני לטווח הארוך"
   />
+
+  <Image src={bernafonCharger} alt="מטען Bernafon Alpha למכשירי שמיעה נטענים" class="mx-auto -mt-12" />
 
   <!-- Features2 Widget ************** -->
 
@@ -117,17 +101,20 @@ const metadata = {
       {
         title: 'מכשירים בתוך התעלה (ITC)',
         description: 'מכשירי שמיעה הנמצאים בתוך תעלת האוזן, דיסקרטיים ונוחים לשימוש יומיומי.',
-        icon: 'tabler:ear-off',
+        image: itcImage,
       },
       {
         title: 'מכשירים עמוק בתעלה (CIC)',
         description: 'מכשירי שמיעה הנמצאים עמוק בתעלת האוזן, כמעט בלתי נראים מבחוץ.',
-        icon: 'tabler:eye-off',
+        image: cicImage,
+        classes: {
+          icon: '!max-w-[150px] !max-h-[150px]',
+        },
       },
       {
         title: 'מכשירים בלתי נראים (IIC)',
         description: 'מכשירי השמיעה הקטנים ביותר, הנמצאים עמוק בתעלת האוזן ובלתי נראים לחלוטין.',
-        icon: 'tabler:eye-off',
+        image: iicImage,
       },
     ]}
   >
@@ -136,9 +123,37 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- Pricing Widget **************** -->
+  <!-- Content Widget ************** -->
 
-  <Pricing
+  <Content
+    id="smart-connectivity"
+    title="טכנולוגיה חכמה למכשירי שמיעה"
+    subtitle="התחברות לסמארטפון ושליטה מלאה במכשירי השמיעה שלכם לחוויה מותאמת אישית"
+    items={[
+      {
+        title: 'שידור שמע ישיר',
+        description:
+          'שידור שיחות טלפון, מוזיקה, פודקאסטים וכל תוכן שמע מהסמארטפון ישירות למכשירי השמיעה בבהירות מרבית.',
+        icon: 'tabler:headphones',
+      },
+      {
+        title: 'איתור מכשיר אבוד',
+        description: "פיצ'ר מציאת מכשיר שמנגן צליל ומראה את המיקום האחרון בו היה חיבור, מושלם למציאת מכשיר שאבד בבית.",
+        icon: 'tabler:search',
+      },
+      {
+        title: 'ניטור מצב סוללה',
+        description: 'בדיקת מצב הסוללה בזמן אמת באפליקציה, כולל התראות מוקדמות לטעינה או החלפת סוללות.',
+        icon: 'tabler:battery-charging',
+      },
+    ]}
+    image={{
+      src: premiumHearingAids,
+      alt: 'מכשירי שמיעה חכמים עם התחברות לאפליקציה',
+    }}
+  />
+
+  <!-- <Pricing
     id="insurance"
     title="השתתפות קופות חולים"
     subtitle="אנו עובדים עם כל קופות החולים ומעניקים החזר כספי מלא או חלקי"
@@ -194,5 +209,5 @@ const metadata = {
         },
       },
     ]}
-  />
+  /> -->
 </Layout>

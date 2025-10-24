@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
 export interface MetaData {
   title?: string;
@@ -89,7 +89,7 @@ export interface Item {
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
-  image?: Image;
+  image?: Image | ImageMetadata;
 }
 
 export interface Price {
@@ -114,28 +114,28 @@ export interface Testimonial {
 
 export interface Input {
   type:
-    | 'text'
-    | 'email'
-    | 'tel'
-    | 'password'
-    | 'number'
-    | 'url'
-    | 'search'
-    | 'date'
-    | 'time'
-    | 'datetime-local'
-    | 'month'
-    | 'week'
-    | 'color'
-    | 'file'
-    | 'range'
-    | 'checkbox'
-    | 'radio'
-    | 'submit'
-    | 'reset'
-    | 'button'
-    | 'image'
-    | 'hidden';
+  | 'text'
+  | 'email'
+  | 'tel'
+  | 'password'
+  | 'number'
+  | 'url'
+  | 'search'
+  | 'date'
+  | 'time'
+  | 'datetime-local'
+  | 'month'
+  | 'week'
+  | 'color'
+  | 'file'
+  | 'range'
+  | 'checkbox'
+  | 'radio'
+  | 'submit'
+  | 'reset'
+  | 'button'
+  | 'image'
+  | 'hidden';
   name: string;
   label?: string;
   autocomplete?: string;
@@ -251,7 +251,7 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+export interface Contact extends Omit<Headline, 'classes'>, Form, Widget { }
 
 export interface CarouselItem {
   id: string;
