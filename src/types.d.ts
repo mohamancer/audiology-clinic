@@ -149,9 +149,6 @@ export interface Textarea {
   rows?: number;
 }
 
-export interface Disclaimer {
-  label?: string;
-}
 
 // COMPONENTS
 export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
@@ -180,9 +177,9 @@ export interface Collapse {
 export interface Form {
   inputs?: Array<Input>;
   textarea?: Textarea;
-  disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  formName?: string;
 }
 
 // WIDGETS

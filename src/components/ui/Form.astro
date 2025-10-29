@@ -2,10 +2,36 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'שלח', description = '' } = Astro.props;
+const { inputs, textarea, button = 'שלח', description = '', formName = 'contact' } = Astro.props;
 ---
 
-<form>
+<form method="POST" name={formName} data-netlify="true" netlify-honeypot="bot-field" id={`form-${formName}`}>
+  {/* Hidden field required by Netlify Forms */}
+  <input type="hidden" name="form-name" value={formName} />
+
+  {/* Honeypot field for spam protection */}
+  <p style="display: none;">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+
+  {/* Success message container */}
+  <div
+    id={`form-success-${formName}`}
+    class="hidden mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg"
+  >
+    <p class="font-medium">תודה! המייל נשלח בהצלחה. נחזור אליכם בהקדם.</p>
+  </div>
+
+  {/* Error message container */}
+  <div
+    id={`form-error-${formName}`}
+    class="hidden mb-6 p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg"
+  >
+    <p class="font-medium">אירעה שגיאה. אנא נסו שוב או חייגו אלינו בטלפון.</p>
+  </div>
+
   {
     inputs &&
       inputs.map(
@@ -24,6 +50,7 @@ const { inputs, textarea, disclaimer, button = 'שלח', description = '' } = As
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                required
               />
             </div>
           )
@@ -32,7 +59,7 @@ const { inputs, textarea, disclaimer, button = 'שלח', description = '' } = As
 
   {
     textarea && (
-      <div>
+      <div class="mb-6">
         <label for="textarea" class="block text-sm font-medium">
           {textarea.label}
         </label>
@@ -42,30 +69,12 @@ const { inputs, textarea, disclaimer, button = 'שלח', description = '' } = As
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          required
         />
       </div>
     )
   }
 
-  {
-    disclaimer && (
-      <div class="mt-3 flex items-start">
-        <div class="flex mt-0.5">
-          <input
-            id="disclaimer"
-            name="disclaimer"
-            type="checkbox"
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-          />
-        </div>
-        <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
-            {disclaimer.label}
-          </label>
-        </div>
-      </div>
-    )
-  }
 
   {
     button && (
@@ -85,3 +94,54 @@ const { inputs, textarea, disclaimer, button = 'שלח', description = '' } = As
     )
   }
 </form>
+
+<script define:vars={{ formName }}>
+  const formId = `form-${formName}`;
+  const successId = `form-success-${formName}`;
+  const errorId = `form-error-${formName}`;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById(formId);
+    const successMsg = document.getElementById(successId);
+    const errorMsg = document.getElementById(errorId);
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Hide previous messages
+      if (successMsg) successMsg.classList.add('hidden');
+      if (errorMsg) errorMsg.classList.add('hidden');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        if (response.ok) {
+          // Show success message
+          if (successMsg) {
+            successMsg.classList.remove('hidden');
+            // Scroll to success message
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          // Reset form
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        // Show error message
+        if (errorMsg) {
+          errorMsg.classList.remove('hidden');
+          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    });
+  });
+</script>

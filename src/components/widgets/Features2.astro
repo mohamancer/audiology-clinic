@@ -35,4 +35,8 @@ const {
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   />
+
+  <div class="flex justify-center items-center mt-12">
+    <slot name="image-section" />
+  </div>
 </WidgetWrapper>

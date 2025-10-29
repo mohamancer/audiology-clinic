@@ -2,10 +2,16 @@
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
-
+import hearingTestImage from '~/assets/images/man-hearing-test-hearing-aids-scaled.jpg';
+import earCanalExamImage from '~/assets/images/ear-canal-examination-otoscope.jpg';
+import comprehensiveHearingTestImage from '~/assets/images/comprehensive-hearing-test.jpg';
+import tympanometryTestImage from '~/assets/images/tympanometry-test-2.jpg';
+import Image from '~/components/common/Image.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
   title: 'בדיקות שמיעה - מכון טון',
   description: 'בדיקות שמיעה מקיפות ומתקדמות במכון טון. אבחון מדויק ומקצועי עם ציוד חדיש.',
@@ -17,7 +23,7 @@ const metadata = {
 
   <Hero
     image={{
-      src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: hearingTestImage,
       alt: 'בדיקות שמיעה מקצועיות',
     }}
   >
@@ -32,9 +38,9 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Features Widget *************** -->
+  <!-- Content Widget ************** -->
 
-  <Features
+  <Content
     id="ear-canal-exam"
     title="בדיקת תעלת האוזן"
     subtitle="בדיקה ראשונית ויסודית של מבנה האוזן החיצונית והתיכונה"
@@ -43,11 +49,6 @@ const metadata = {
         title: 'בדיקה ויזואלית באוטוסקופ',
         description: 'בדיקה מדויקת של תעלת האוזן ועור התוף באמצעות אוטוסקופ מתקדם לזיהוי דלקות, שעווה או חסימות.',
         icon: 'tabler:eye',
-      },
-      {
-        title: 'ניקוי מקצועי של האוזן',
-        description: 'הסרת שעווה עודפת וחסימות בתעלת האוזן באמצעות כלים מקצועיים ובטוחים.',
-        icon: 'tabler:wash',
       },
       {
         title: 'אבחון בעיות ברקמות',
@@ -61,26 +62,26 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      alt: 'בדיקת תעתוע האוזן',
+      src: earCanalExamImage,
+      alt: 'בדיקת תעלת האוזן באוטוסקופ - אודיולוג בודק אוזן של מטופלת',
     }}
   />
 
-  <!-- Features Widget *************** -->
+  <!-- Content Widget *************** -->
 
-  <Features
+  <Content
     id="comprehensive-test"
-    title="בדיקה שמיעתית מקיפה"
+    title="בדיקה שמיעה מקיפה"
     subtitle="בדיקת שמיעה מפורטת ומדויקת לכל תחומי התדרים"
     isReversed
     items={[
       {
-        title: 'אודיומטריה צרופה',
+        title: 'בדיקת הולכת אוויר',
         description: 'בדיקת רגישות השמיעה בתדרים שונים באמצעות אוזניות מקצועיות, למדידת סף השמיעה בכל אוזן בנפרד.',
         icon: 'tabler:headphones',
       },
       {
-        title: 'אודיומטריה עצמית',
+        title: 'בדיקת הולכת עצם (bone)',
         description: 'בדיקת הולכת הצליל דרך העצמות באמצעות רטט לזיהוי מיקום הבעיה באוזן החיצונית, התיכונה או הפנימית.',
         icon: 'tabler:bone',
       },
@@ -89,14 +90,9 @@ const metadata = {
         description: 'מדידת יכולת הבנת מילים ומשפטים ברמות עוצמה שונות לקביעת מידת הפגיעה בהבנה.',
         icon: 'tabler:message',
       },
-      {
-        title: 'בדיקת סף אי נוחות',
-        description: 'קביעת רמת הקול המקסימלית שהמטופל יכול לסבול ללא אי נוחות או כאב.',
-        icon: 'tabler:volume-3',
-      },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      src: comprehensiveHearingTestImage,
       alt: 'בדיקה שמיעתית מקיפה',
     }}
   />
@@ -119,62 +115,24 @@ const metadata = {
         icon: 'tabler:gauge',
       },
       {
-        title: 'בדיקת רפלקס סטפדיוס',
-        description: 'בדיקת תגובת השריר הקטן באוזן התיכונה לצלילים חזקים, המעידה על תקינות המערכת השמיעתית.',
-        icon: 'tabler:activity',
-      },
-      {
         title: 'זיהוי חורים בעור התוף',
         description: 'איתור חורים או קרעים בעור התוף שעלולים להשפיע על השמיעה ולדרוש טיפול רפואי.',
         icon: 'tabler:search',
       },
     ]}
   >
+    <Fragment slot="image-section">
+      <Image
+        src={tympanometryTestImage}
+        alt="תהליך בדיקת הטימפנומטריה במכון טון"
+        class="w-full h-auto rounded-lg shadow-lg"
+      /></Fragment
+    >
+
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    id="detailed-test"
-    title="בדיקות מפורטות עם תמונות"
-    subtitle="לכל מטופל תהיה תיעוד מפורט עם תמונות ותוצאות דיגיטליות"
-    columns={2}
-    items={[
-      {
-        title: 'תיעוד דיגיטלי מלא',
-        description: 'כל בדיקה מתועדת במערכת דיגיטלית מתקדמת עם גרפים, תמונות ותוצאות מפורטות לשמירה ומעקב.',
-        icon: 'tabler:file-text',
-      },
-      {
-        title: 'תמונות מהאוזן',
-        description: 'צילום מקצועי של תעלת האוזן ועור התוף באמצעות מצלמה דיגיטלית מתקדמת להמחשת הממצאים.',
-        icon: 'tabler:camera',
-      },
-      {
-        title: 'אודיוגרמה צבעונית',
-        description: 'תוצאות הבדיקה מוצגות באודיוגרמה צבעונית וברורה להבנה קלה של מצב השמיעה.',
-        icon: 'tabler:chart-line',
-      },
-      {
-        title: 'המלצות טיפול',
-        description: 'המלצות מפורטות לטיפול על בסיס תוצאות הבדיקה, כולל אפשרויות שונות ודרגי דחיפות.',
-        icon: 'tabler:clipboard-list',
-      },
-      {
-        title: 'דוח רפואי מקצועי',
-        description: 'דוח רפואי מקצועי ומפורט שניתן להעביר לרופא המשפחה או לרופא אף אוזן גרון.',
-        icon: 'tabler:report',
-      },
-      {
-        title: 'מעקב התקדמות',
-        description: 'השוואה עם בדיקות קודמות לזיהוי שינויים ומעקב אחר התקדמות הטיפול לאורך זמן.',
-        icon: 'tabler:trending-up',
-      },
-    ]}
-  />
 
   <!-- Steps Widget ****************** -->
 
@@ -246,4 +204,22 @@ const metadata = {
       alt: 'ציוד בדיקות מתקדם',
     }}
   />
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        target: '_self',
+        text: 'קבע בדיקת שמיעה',
+        href: '/contact',
+        icon: 'tabler:stethoscope',
+      },
+    ]}
+  >
+    <Fragment slot="title">מוכנים לבדיקת השמיעה שלכם?</Fragment>
+
+    <Fragment slot="subtitle">
+      קביעת תור לבדיקת שמיעה מקיפה במכון טון היא הצעד הראשון לאבחון מדויק וטיפול מקצועי. הצוות שלנו ממתין לכם עם הציוד
+      המתקדם ביותר.
+    </Fragment>
+  </CallToAction>
 </Layout>
