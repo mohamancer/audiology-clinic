@@ -16,6 +16,7 @@ import premiumHearingAids from 'public/images/premium-hearing-aids.jpg';
 import hearingTestProcess from 'public/images/hearing-test-process.jpg';
 import hearingAidCharging from 'public/images/hearing-aid-charging.jpg';
 import clinicReception from 'public/images/clinic-reception.jpg';
+import clinicInterior from 'public/images/20251201_125039.jpg';
 
 const metadata = {
   title: 'מכון טון - מרפאת שמיעה מקצועית',
@@ -119,17 +120,17 @@ const metadata = {
         <Image
           src={clinicReception}
           alt="מרפאת שמיעה - אזור קבלה מודרני עם דלפק עץ וציוד מקצועי"
-          class="mx-auto rounded-md w-full h-auto"
+          class="mx-auto rounded-xl shadow-2xl w-full h-auto"
           widths={[400, 768, 1024, 2040]}
           sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
           loading="lazy"
           layout="responsive"
-          style="object-fit: contain; max-height: none;"
+          style="object-fit: contain; max-width: 676px; width: 100%;"
         />
       </div>
     </div>
   </section>
-  
+
   <!-- Features2 Widget ************** -->
   <Features2
     title="מה השירותים שאנו מספקים?"
@@ -169,6 +170,22 @@ const metadata = {
       },
     ]}
   >
+    <Fragment slot="content">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="relative m-auto max-w-2xl overflow-visible">
+          <Image
+            src={clinicInterior}
+            alt="פנים המרפאה - צוות מקצועי וחדר ייעוץ מודרני"
+            class="mx-auto rounded-xl shadow-2xl w-full h-auto"
+            widths={[400, 768, 1024, 2040]}
+            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+            loading="lazy"
+            layout="responsive"
+            style="object-fit: contain; max-height: 600px; max-width: 672px; width: 100%;"
+          />
+        </div>
+      </div>
+    </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
