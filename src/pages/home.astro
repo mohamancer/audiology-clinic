@@ -8,12 +8,14 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import ImageCarousel from '~/components/widgets/ImageCarousel.astro';
+import Image from '~/components/common/Image.astro';
 import hearingSoundWaves from 'public/images/hearing-sound-waves.jpg';
 import audiologistConsultation from 'public/images/audiologist-consultation.jpg';
 import hearingAidsDisplay from 'public/images/hearing-aids-display.jpg';
 import premiumHearingAids from 'public/images/premium-hearing-aids.jpg';
 import hearingTestProcess from 'public/images/hearing-test-process.jpg';
 import hearingAidCharging from 'public/images/hearing-aid-charging.jpg';
+import clinicReception from 'public/images/clinic-reception.jpg';
 
 const metadata = {
   title: 'מכון טון - מרפאת שמיעה מקצועית',
@@ -109,33 +111,40 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- Stats Widget ******************
-
-  <Stats
-    title="המספרים מדברים בעד עצמם"
-    subtitle="אלפי מטופלים מרוצים בחרו במכון טון לטיפול בשמיעה שלהם"
-    stats={[
-      { title: 'מטופלים מרוצים', amount: '5,000+' },
-      { title: 'שנות ניסיון', amount: '15+' },
-      { title: 'דירוג מקצועי', amount: '4.9' },
-      { title: 'בדיקות שמיעה', amount: '10,000+' },
-    ]}
-  /> -->
-
+  <!-- Clinic Reception Image ********* -->
+  <section class="relative overflow-visible">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative m-auto max-w-2xl overflow-visible">
+        <Image
+          src={clinicReception}
+          alt="מרפאת שמיעה - אזור קבלה מודרני עם דלפק עץ וציוד מקצועי"
+          class="mx-auto rounded-md w-full h-auto"
+          widths={[400, 768, 1024, 2040]}
+          sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+          loading="lazy"
+          layout="responsive"
+          style="object-fit: contain; max-height: none;"
+        />
+      </div>
+    </div>
+  </section>
+  
   <!-- Features2 Widget ************** -->
-
   <Features2
     title="מה השירותים שאנו מספקים?"
     subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים, לטיפול בבעיות שמיעה, לרבות בדיקות שמיעה."
     items={[
       {
         title: 'בדיקת שמיעה',
-        description: 'בדיקה אודיומטרית (Audiometry) היא בדיקת שמיעה הבודקת את יכולת האדם לשמוע צלילים בתדרים ועוצמות שונות \n🎧\nבמהלך הבדיקה מושמעים צלילים באוזניות, והנבדק מסמן מתי הוא שומע אותם. התוצאה – אודיוגרם – מראה את רמת השמיעה בכל אוזן ויכולה לגלות ירידה בשמיעה, סוג הליקוי (מוליך, תחושתי-עצבי או מעורב) וחומרתו.',
+        description:
+          'בדיקה אודיומטרית (Audiometry) היא בדיקת שמיעה הבודקת את יכולת האדם לשמוע צלילים בתדרים ועוצמות שונות \n🎧\nבמהלך הבדיקה מושמעים צלילים באוזניות, והנבדק מסמן מתי הוא שומע אותם. התוצאה – אודיוגרם – מראה את רמת השמיעה בכל אוזן ויכולה לגלות ירידה בשמיעה, סוג הליקוי (מוליך, תחושתי-עצבי או מעורב) וחומרתו.',
         icon: 'flat-color-icons:database',
       },
       {
         title: 'בדיקת טימפנומטריה',
-        description: 'בדיקת טימפנומטריה (Tympanometry) היא בדיקה קצרה ולא פולשנית שבודקת את תפקוד עור התוף והאוזן התיכונה. \nהמטרה לזהות נוזלים באוזן, בעיות בצינור האוסטכיוס או ליקוי בהולכת הקול.',
+        description:
+          'בדיקת טימפנומטריה (Tympanometry) היא בדיקה קצרה ולא פולשנית שבודקת את תפקוד עור התוף והאוזן התיכונה. \nהמטרה לזהות נוזלים באוזן, בעיות בצינור האוסטכיוס או ליקוי בהולכת הקול.',
         icon: 'flat-color-icons:search',
       },
       {
