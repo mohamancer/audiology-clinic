@@ -4,6 +4,10 @@ import favicon from 'src/assets/favicons/favicon-32x32.png';
 export const headerData = {
   links: [
     {
+      text: 'אודות',
+      href: getPermalink('/about'),
+    },
+    {
       text: 'מכשירי שמיעה',
       href: getPermalink('/hearing-aids'),
       links: [
@@ -39,10 +43,6 @@ export const headerData = {
           icon: 'tabler:components',
         },
       ],
-    },
-    {
-      text: 'אודות',
-      href: getPermalink('/about'),
     },
     {
       text: 'שעות פעילות',

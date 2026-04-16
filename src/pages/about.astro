@@ -1,153 +1,151 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import clinicInteriorHallway from 'public/images/clinic-interior-hallway.png';
+import adamAmerFounder from 'public/images/adam-amer-founder.png';
 
 const metadata = {
-  title: 'אודות - מכון טון',
+  title: 'אודותינו - מכון טון',
+  description:
+    'מכון טון – מרכז אודיולוגי מקצועי. הסיפור שלנו, החזון, והצוות בהובלת אדם עאמר. קביעת תור לבדיקת שמיעה והתאמת מכשירים.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero: clinic photo + title only (no service-style two-line headline) -->
 
   <Hero
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'מכון טון צוות מקצועי',
+      src: clinicInteriorHallway,
+      alt: 'מכון טון - מסדרון המרפאה והמרחב המקצועי',
     }}
   >
-    <Fragment slot="title">
-      מרפאת שמיעה מובילה עם <br />
-      <span class="text-accent dark:text-white">צוות מקצועי וציוד מתקדם</span>
-    </Fragment>
-
+    <Fragment slot="title">אודותינו</Fragment>
     <Fragment slot="subtitle">
-      מכון טון נוסדה בשנת 2009 עם מטרה ברורה: לספק טיפול אודיולוגי מתקדם ואיכותי לכל מטופל. הצוות המקצועי שלנו כולל
+      מכון טון נוסדה בשנת 2023 עם מטרה ברורה: לספק טיפול אודיולוגי מתקדם ואיכותי לכל מטופל. הצוות המקצועי שלנו כולל
       אודיולוגים מוסמכים עם ניסיון רב באבחון וטיפול בבעיות שמיעה שונות.
+    </Fragment>
+    <Fragment slot="content">
+      <div
+        dir="rtl"
+        class="mx-auto my-8 max-w-2xl space-y-5 border-e-4 border-accent pe-6 text-start text-lg leading-relaxed text-muted dark:text-slate-300 md:text-xl"
+      >
+        <p>
+          המכון בניהולו של הקלינאי הוותיק אדם עאמר – שהוא בעל ניסיון נרחב בהתאמת מכשירי שמיעה מכל המותגים והחברות,
+          וניהל בשנות עבודתו מספר מכונים מרכזיים בכל רחבי הארץ!
+        </p>
+        <p>
+          אצלנו תקבלו שירות מקצועי, היכרות רבת שנים עם ענף מורכב שדורש הבנה עמוקה, ומכשירי שמיעה ברמות הכי מתקדמות
+          לרבות מכשירים נטענים, מכשירים עם חיבור בלוטוס ישיר לטלפון, מכשירים קטנים ואסתטיים.
+        </p>
+      </div>
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
+  <!-- Vision + portrait: editorial split (only on About) -->
 
-  <Stats
-    title="המספרים שלנו"
-    stats={[
-      { title: 'שנות ניסיון', amount: '15+' },
-      { title: 'מטופלים מרוצים', amount: '5,000+' },
-      { title: 'בדיקות שמיעה', amount: '10,000+' },
-      { title: 'דירוג מקצועי', amount: '4.9' },
-    ]}
-  />
+  <WidgetWrapper containerClass="max-w-6xl">
+    <div class="grid gap-12 md:grid-cols-[minmax(0,1fr)_260px] md:gap-14 lg:grid-cols-[minmax(0,1fr)_280px]">
+      <article dir="rtl" class="min-w-0 space-y-5 text-start text-lg leading-relaxed text-muted dark:text-slate-300 md:text-xl">
+        <h2 class="font-heading text-3xl font-bold tracking-tight text-heading dark:text-slate-100 md:text-4xl">החזון שלנו</h2>
+        <p>
+          במכון טון אנו שואפים להיות הבחירה הראשונה והאמינה ביותר בתחום השמיעה, תוך הענקת שירות מקצועי, אישי ומתקדם לכל
+          מטופל, בכל גיל.
+        </p>
+        <p>
+          אנו פועלים מתוך מחויבות לשפר את איכות החיים של לקוחותינו, באמצעות אבחון מדויק של יכולות השמיעה והתאמה מיטבית של
+          מכשירי שמיעה מהמתקדמים בעולם.
+        </p>
+        <p>
+          חזוננו הוא לשלב טכנולוגיה חדשנית עם יחס אנושי חם, וליצור חוויית שירות שמבוססת על אמון, שקיפות וליווי מלא לאורך כל
+          הדרך.
+        </p>
+        <p>
+          במכון טון, אנו לא רק משפרים שמיעה – אנו מחברים אנשים לעולם של צלילים, תקשורת ואיכות חיים טובה יותר.
+        </p>
+      </article>
 
-  <!-- Features3 Widget ************** -->
+      <aside class="mx-auto w-full max-w-xs shrink-0 self-start md:mx-0 md:max-w-none" dir="rtl">
+        <div class="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900/80">
+          <Image
+            src={adamAmerFounder}
+            alt="אדם עאמר – מייסד ומנהל מכון טון"
+            class="aspect-[3/4] w-full rounded-xl object-cover object-top"
+            widths={[280, 400, 560]}
+            sizes="(max-width: 767px) 280px, 320px"
+            loading="lazy"
+            layout="responsive"
+          />
+          <p class="mt-4 text-center text-lg font-semibold text-heading dark:text-slate-100">אדם עאמר</p>
+          <p class="text-center text-sm text-muted dark:text-slate-400">מייסד ומנהל המכון</p>
+        </div>
+      </aside>
+    </div>
+  </WidgetWrapper>
 
-  <Features3
-    title="השירותים שלנו"
-    subtitle="אנו מציעים מגוון רחב של שירותי אודיולוגיה מקצועיים לטיפול בבעיות שמיעה שונות"
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'בדיקות שמיעה',
-        description: 'בדיקות שמיעה מקיפות ומדויקות באמצעות ציוד מתקדם לאבחון בעיות שמיעה שונות ולקביעת הטיפול המתאים.',
-        icon: 'tabler:microscope',
-      },
-      {
-        title: 'התאמת מכשירי שמיעה',
-        description: 'התאמה אישית של מכשירי שמיעה מתקדמים עם טכנולוגיה חדישה לשיפור איכות השמיעה.',
-        icon: 'tabler:ear',
-      },
-      {
-        title: 'ייעוץ מקצועי',
-        description: 'ייעוץ מקצועי מקיף לכל שאלה בנושא שמיעה, טיפול ומניעה של בעיות שמיעה.',
-        icon: 'tabler:user-check',
-      },
-    ]}
-  />
+  <!-- Why us: simple list, original wording -->
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'מעקב וטיפול מתמשך',
-        description: 'מעקב מתמשך אחר התקדמות הטיפול והתאמות נדרשות לאורך זמן להבטחת תוצאות מיטביות.',
-        icon: 'tabler:chart-line',
-      },
-      {
-        title: 'טיפול בילדים',
-        description: 'טיפול מיוחד בילדים עם בעיות שמיעה, כולל אבחון מוקדם וטיפול מותאם לגיל.',
-        icon: 'tabler:heart',
-      },
-      {
-        title: 'שירותי חירום',
-        description: 'שירותי חירום לבעיות שמיעה דחופות עם זמינות גבוהה וטיפול מהיר.',
-        icon: 'tabler:phone',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="הצוות המקצועי שלנו"
-    subtitle="הצוות שלנו כולל אודיולוגים מוסמכים עם ניסיון רב באבחון וטיפול בבעיות שמיעה. אנו מחויבים לספק את הטיפול הטוב ביותר לכל מטופל."
-    items={[
-      {
-        title: 'ד"ר שרה כהן',
-        description:
-          'אודיולוגית בכירה עם למעלה מ-20 שנות ניסיון באבחון וטיפול בבעיות שמיעה. מומחית בהתאמת מכשירי שמיעה מתקדמים.',
-        icon: 'tabler:user',
-      },
-      {
-        title: 'ד"ר דוד לוי',
-        description: 'אודיולוג מומחה בטיפול בילדים עם בעיות שמיעה. בעל ניסיון רב באבחון מוקדם וטיפול מותאם.',
-        icon: 'tabler:user',
-      },
-      {
-        title: "גב' רותי גולדברג",
-        description: 'טכנאית אודיולוגיה מוסמכת עם התמחות בציוד מתקדם ובבדיקות שמיעה מורכבות.',
-        icon: 'tabler:user',
-      },
-    ]}
-  >
+  <WidgetWrapper containerClass="max-w-3xl">
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+    <section dir="rtl">
+      <h2 class="mb-6 text-center font-heading text-2xl font-bold text-heading dark:text-slate-100 md:text-3xl">
+        אז למה לבחור במכון טון
+      </h2>
+      <ul class="space-y-4 text-lg text-muted dark:text-slate-300 md:text-xl">
+        <li>
+          <span class="font-semibold text-heading dark:text-slate-200">קרוב אליכם:</span>
+          אנחנו בלב המרכז במקום נגיש עם חנייה והנגשה לכולם
+        </li>
+        <li>
+          <span class="font-semibold text-heading dark:text-slate-200">מקצועי מאוד:</span>
+          היכרות רבת שנים עם הענף ומקצועיות עמוקה
+        </li>
+        <li>
+          <span class="font-semibold text-heading dark:text-slate-200">מחירים הכי משתלמים:</span>
+          אצלנו תקבלו את ההצעה הכי טובה (לרבות הסכמים עם הקופות)
+        </li>
+        <li>
+          <span class="font-semibold text-heading dark:text-slate-200">שירות אדיב:</span>
+          הקשבה והבנה לדרישות הלקוח
+        </li>
+      </ul>
+    </section>
+  </WidgetWrapper>
 
-  <!-- Steps2 Widget ***************** -->
-
-  <Steps2
-    title="איך אנחנו עובדים"
-    subtitle="תהליך הטיפול במכון טון מורכב מכמה שלבים פשוטים וברורים"
-    items={[
+  <ContactUs
+    id="form"
+    title="מעוניינים לקבוע תור לבדיקת שמיעה או התאמת מכשיר שמיעה?"
+    subtitle="מלאו את הטופס ונחזור אליכם בהקדם. לקביעת תור מידית, חייגו אלינו בטלפון 073-3880680"
+    inputs={[
       {
-        title: 'שלב 1: פגישת ייעוץ ראשונית',
-        description: 'פגישה ראשונית בה נאזין לתלונות שלכם, נבדוק את ההיסטוריה הרפואית ונבצע בדיקה ראשונית.',
-        icon: 'tabler:calendar',
+        type: 'text',
+        name: 'name',
+        label: 'שם מלא',
       },
       {
-        title: 'שלב 2: בדיקת שמיעה מקיפה',
-        description: 'בדיקת שמיעה מדויקת באמצעות ציוד מתקדם לאבחון מדויק של בעיית השמיעה.',
-        icon: 'tabler:microscope',
+        type: 'tel',
+        name: 'phone',
+        label: 'טלפון',
       },
       {
-        title: 'שלב 3: קביעת תוכנית טיפול',
-        description: 'תבסס על תוצאות הבדיקה, נקבע תוכנית טיפול מותאמת אישית לצרכים שלכם.',
-        icon: 'tabler:clipboard',
+        type: 'email',
+        name: 'email',
+        label: 'אימייל (אופציונלי)',
       },
       {
-        title: 'שלב 4: התאמה ומעקב',
-        description: 'התאמת הפתרון הנבחר ומעקב מתמשך להבטחת תוצאות מיטביות.',
-        icon: 'tabler:check',
+        type: 'text',
+        name: 'preferred_time',
+        label: 'זמן מועדף לתור',
       },
     ]}
+    textarea={{
+      label: 'פרטים נוספים / סוג הטיפול הנדרש',
+    }}
+    description="נחזור אליכם בהקדם לקביעת התור. לתגובה מיידית - חייגו 073-3880680"
   />
 </Layout>
